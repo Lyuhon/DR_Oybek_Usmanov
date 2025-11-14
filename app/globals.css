@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  /* font-family: var(--font-poppins), sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Exo 2', sans-serif; */
+}
+
+div#amofroms_main_wrapper,
+#amofroms_main_wrapper {
+  background: transparent;
+  border: 0px !important;
+  box-shadow: none !important;
+}
+
+form#amoforms_form {
+  padding: 0px !important;
+}
+
+.amoforms-footer-copyright {
+  display: none !important;
+}
+
+
+/* Плавное появление оверлея */
+.mobile-menu-overlay {
+  transition: opacity 0.3s ease-out;
+}
+
+/* Плавный выезд сайдбара */
+.mobile-menu-sidebar {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(100%);
+}
+
+.mobile-menu-sidebar.open {
+  transform: translateX(0);
+}
