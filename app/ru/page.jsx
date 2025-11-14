@@ -60,19 +60,19 @@ export default function HairTransplantLanding() {
       title: "Восстановите свою уверенность",
       subtitle: "Естественные результаты с методом FUE",
       // https://www.freepik.com/free-photo/portrait-man-receiving-enhancements-tweakments-through-help-cosmetic-procedures_138708465.htm#fromView=search&page=4&position=25&uuid=23ddcf9f-af30-4c1a-834d-fa33fe3250b0&query=%D0%BF%D0%B5%D1%80%D0%B5%D1%81%D0%B0%D0%B4%D0%BA%D0%B0+%D0%B2%D0%BE%D0%BB%D0%BE%D1%81
-      image: "https://img.freepik.com/free-photo/portrait-man-receiving-enhancements-tweakments-through-help-cosmetic-procedures_23-2151255676.jpg?t=st=1763073557~exp=1763077157~hmac=a8fa8605912bf99d27f79e594d4bf451366b00ff876b78c00064e8ce0d4c632f&w=1060"
+      image: "/happy-beard-man.jpg"
     },
     {
       title: "Современные технологии",
       subtitle: "Безболезненная процедура с быстрым восстановлением",
-      image: "https://img.freepik.com/free-photo/pills-with-medical-mask-desk_23-2148519804.jpg?t=st=1763073738~exp=1763077338~hmac=321ad535cdb9f667fb5d88fa5d84046a47a92b96e5bb5762b264776972a35869&w=740"
+      image: "/pills-yellow-bg.jpg"
       // https://www.freepik.com/free-photo/pills-with-medical-mask-desk_7797833.htm#fromView=search&page=1&position=7&uuid=cb9698eb-e087-4416-99f3-8b346c5beacb&query=%D0%B6%D0%B5%D0%BB%D1%82%D1%8B%D0%B9+%D0%BC%D0%B5%D0%B4+%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82
     },
     {
       title: "Более 2000 успешных операций",
       subtitle: "Международный опыт и сертификация",
       //https://www.freepik.com/free-photo/portrait-man-receiving-enhancements-tweakments-through-help-cosmetic-procedures_138708423.htm
-      image: "https://img.freepik.com/free-photo/portrait-man-receiving-enhancements-tweakments-through-help-cosmetic-procedures_23-2151255680.jpg?t=st=1763073622~exp=1763077222~hmac=ffe69a46b7f4250fc4b40a6bcbc34481b8137ee5751d8adb545334796a390fa6&w=1480"
+      image: "/man-with-beard.avif"
     }
   ];
 

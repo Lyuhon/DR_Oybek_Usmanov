@@ -56,17 +56,17 @@ export default function HairTransplantLanding() {
     {
       title: "Ishonchingizni tiklang",
       subtitle: "FUE usuli bilan tabiiy natijalar",
-      image: "https://img.freepik.com/free-photo/portrait-man-receiving-enhancements-tweakments-through-help-cosmetic-procedures_23-2151255676.jpg?t=st=1763073557~exp=1763077157~hmac=a8fa8605912bf99d27f79e594d4bf451366b00ff876b78c00064e8ce0d4c632f&w=1060"
+      image: "/happy-beard-man.jpg"
     },
     {
       title: "Zamonaviy texnologiyalar",
       subtitle: "Og'riqsiz protsedura va tez tiklanish",
-      image: "https://img.freepik.com/free-photo/pills-with-medical-mask-desk_23-2148519804.jpg?t=st=1763073738~exp=1763077338~hmac=321ad535cdb9f667fb5d88fa5d84046a47a92b96e5bb5762b264776972a35869&w=740"
+      image: "/pills-yellow-bg.jpg"
     },
     {
       title: "2000+ muvaffaqiyatli operatsiya",
       subtitle: "Xalqaro tajriba va sertifikatsiya",
-      image: "https://img.freepik.com/free-photo/portrait-man-receiving-enhancements-tweakments-through-help-cosmetic-procedures_23-2151255680.jpg?t=st=1763073622~exp=1763077222~hmac=ffe69a46b7f4250fc4b40a6bcbc34481b8137ee5751d8adb545334796a390fa6&w=1480"
+      image: "/man-with-beard.avif"
     }
   ];
 
