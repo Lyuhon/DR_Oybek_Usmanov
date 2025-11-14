@@ -2,14 +2,143 @@
 
 import { useState, useEffect } from 'react';
 import { ChevronRight, Award, Clock, Users, CheckCircle, Phone, Mail, MapPin, Star, ArrowRight, Menu, X, ChevronLeft, ChevronDown } from 'lucide-react';
+import ContactForm from './ContactForm';
+
+// ============================================
+// STATIK MA'LUMOTLAR (KOMPONENT TASHQARISIDA)
+// ============================================
+
+const heroSlides = [
+  {
+    title: "Ishonchingizni tiklang",
+    subtitle: "FUE usuli bilan tabiiy natijalar",
+    image: "/happy-beard-man.jpg"
+  },
+  {
+    title: "Zamonaviy texnologiyalar",
+    subtitle: "Og'riqsiz jarayon va tez tiklanish",
+    image: "/pills-yellow-bg.jpg"
+  },
+  {
+    title: "2000 dan ortiq muvaffaqiyatli operatsiya",
+    subtitle: "Xalqaro tajriba va sertifikatsiya",
+    image: "/man-with-beard.avif"
+  }
+];
+
+const services = [
+  {
+    title: 'FUE usuli',
+    description: 'Innovatsion choklarsiz soch ko\'chirish usuli - zamonaviy trixologiyaning oltin standarti. Minimal shikastlanish, tabiiy o\'sish burchagi, ko\'rinadigan izlarsiz tez tiklanish.',
+    features: ['Ko\'rinadigan chandiqlar yo\'q', '3-5 kunlik tiklanish', 'Tabiiy natija', 'Bir seansda 6000 tagacha graft'],
+    image: '/FUE-method.jpg'
+  },
+  {
+    title: 'DHI usuli',
+    description: 'Kanallar yaratmasdan to\'g\'ridan-to\'g\'ri soch implantatsiyasi. Maksimal zichlik va transplantlarni aniq joylashtiruvchi inqilobiy texnologiya.',
+    features: ['Yuqori zichlik', 'Aniq implantatsiya', 'Minimal shikastlanish', 'Tez bitish'],
+    image: '/DHI-method.jpg'
+  },
+  {
+    title: 'Soqol transplantatsiyasi',
+    description: 'Har qanday shaklda qalin, tabiiy soqol yaratish. Yuz chiziqlarini hisobga olgan holda individual dizayn, maksimal tabiiylik uchun tabiiy o\'sish burchagi.',
+    features: ['Tabiiy qalinlik', 'Har qanday shakl', 'Individual dizayn', 'Umrbod natija'],
+    image: 'https://img.freepik.com/free-photo/half-man-s-face-with-beard_171337-17203.jpg'
+  },
+  {
+    title: 'PRP-terapiya',
+    description: 'Sochni mustahkamlash uchun innovatsion plazmaterapiya. Tabiiy o\'sishni rag\'batlantiradi, soch sifati va tuzilmasini yaxshilaydi, jarrohlik aralashmasiz to\'kilishni to\'xtatadi.',
+    features: ['Operatsiyasiz', 'Sochni mustahkamlash', 'O\'sishni rag\'batlantirish', 'To\'kilishni oldini olish'],
+    image: 'https://img.freepik.com/free-photo/adult-male-doing-follicular-unit-extraction_23-2149106334.jpg'
+  }
+];
+
+const stats = [
+  { number: '8+', label: 'Yillik ish tajribasi', icon: Award },
+  { number: '5000+', label: 'Soatlik amaliyot', icon: Clock },
+  { number: '2000+', label: 'Muvaffaqiyatli operatsiyalar', icon: Users },
+  { number: '98%', label: 'Mamnun bemorlar', icon: Star }
+];
+
+const certificates = [
+  {
+    year: '2018',
+    title: 'Toshkent tibbiyot akademiyasi',
+    specialty: 'Umumiy shifokorlik amaliyoti',
+    image: '/photo_2025-11-14_02-48-28.jpg'
+  },
+  {
+    year: '2021',
+    title: 'Toshkent tibbiyot akademiyasi',
+    specialty: 'Jarrohlik bo\'yicha magistrlik darajasi',
+    image: '/photo_2025-11-14_02-48-25.jpg'
+  },
+  {
+    year: '2022',
+    title: 'Malaka oshirish markazi',
+    specialty: 'Plastik jarrohlik',
+    image: '/photo_2025-11-14_02-48-16.jpg'
+  }
+];
+
+const testimonials = [
+  {
+    name: 'Farxod R.',
+    date: 'Oktyabr 2025',
+    text: 'Ajoyib natija! Doktor Usmanov haqiqiy professional. Protsedura qulay o\'tdi, natija barcha kutganimdan oshib ketdi. Sochlar mutlaqo tabiiy ko\'rinadi.',
+    rating: 5
+  },
+  {
+    name: 'Aziz M.',
+    date: 'Sentyabr 2025',
+    text: 'FUE usuli bilan ko\'chirishni qildim. Juda mamnunman! Hech qanday chandiq yo\'q, tez tiklanish. Doktor hamma narsani batafsil tushuntirdi, butun jarayon nazorat ostida edi. Tavsiya qilaman!',
+    rating: 5
+  },
+  {
+    name: 'Shaxzod K.',
+    date: 'Avgust 2025',
+    text: 'Uzoq vaqt klinika tanladim, doktor Usmanovda to\'xtadim - bir soniya ham afsuslanmadim. Zamonaviy jihozlar, yuqori professionallik, individual yondashuv. Natija ajoyib!',
+    rating: 5
+  }
+];
+
+const advantages = [
+  {
+    title: 'Xalqaro malaka',
+    description: 'ISHRS va AAHRS a\'zosi, xalqaro standartlar bo\'yicha ko\'p yillik ish tajribasi',
+    icon: Award
+  },
+  {
+    title: 'Zamonaviy jihozlar',
+    description: 'Eng yangi texnologiyalar va oxirgi avlod asboblaridan foydalanamiz',
+    icon: CheckCircle
+  },
+  {
+    title: 'Individual yondashuv',
+    description: 'Har bir bemorning xususiyatlarini hisobga olgan holda shaxsiy davolash rejasi',
+    icon: Users
+  },
+  {
+    title: 'Sifat kafolati',
+    description: 'Konsultatsiyadan to to\'liq tiklanishgacha to\'liq kuzatuv',
+    icon: Star
+  }
+];
+
+// Bayroqlar
+const RuFlag = () => (
+  <img src="/ru.svg" alt="Russia Flag" className="h-5 w-auto rounded-[3px]" />
+);
+
+// ============================================
+// KOMPONENT
+// ============================================
 
 export default function HairTransplantLanding() {
   const [activeService, setActiveService] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [selectOpen, setSelectOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState('Xizmatni tanlang');
   const [certificateModal, setCertificateModal] = useState(null);
 
   useEffect(() => {
@@ -20,6 +149,7 @@ export default function HairTransplantLanding() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen || certificateModal !== null) {
       document.body.style.overflow = 'hidden';
@@ -31,6 +161,7 @@ export default function HairTransplantLanding() {
     };
   }, [mobileMenuOpen, certificateModal]);
 
+  // Smooth scroll handler
   const smoothScroll = (e, targetId) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
@@ -45,150 +176,13 @@ export default function HairTransplantLanding() {
     }
   };
 
+  // Hero slider auto-play
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
-
-  const heroSlides = [
-    {
-      title: "Ishonchingizni tiklang",
-      subtitle: "FUE usuli bilan tabiiy natijalar",
-      image: "/happy-beard-man.jpg"
-    },
-    {
-      title: "Zamonaviy texnologiyalar",
-      subtitle: "Og'riqsiz protsedura va tez tiklanish",
-      image: "/pills-yellow-bg.jpg"
-    },
-    {
-      title: "2000+ muvaffaqiyatli operatsiya",
-      subtitle: "Xalqaro tajriba va sertifikatsiya",
-      image: "/man-with-beard.avif"
-    }
-  ];
-
-  const services = [
-    {
-      title: 'FUE usuli',
-      description: 'Soch ko\'chirish uchun innovatsion choksiz usul - zamonaviy trixologiyaning oltin standarti. Minimal shikastlanish, sochning tabiiy o\'sish burchagi, ko\'rinadigan izlarsiz tez tiklanish.',
-      features: ['Ko\'rinadigan chandiqlar yo\'q', 'Tiklanish 3-5 kun', 'Tabiiy natija', 'Bir seansda 6000 tagacha graft'],
-      image: '/FUE-method.jpg'
-    },
-    {
-      title: 'DHI usuli',
-      description: 'Oldindan kanallar yaratmasdan to\'g\'ridan-to\'g\'ri soch implantatsiyasi. Maksimal zichlik va transplantlarni aniq joylashtirish ta\'minlaydigan inqilobiy texnologiya.',
-      features: ['Yuqori zichlik', 'Aniq implantatsiya', 'Minimal shikast', 'Tez bitish'],
-      image: '/DHI-method.jpg'
-    },
-    {
-      title: 'Soqol ko\'chirish',
-      description: 'Har qanday shaklda qalin, tabiiy soqol yaratish. Yuz xususiyatlarini hisobga olgan holda individual dizayn, maksimal tabiiylik uchun sochning tabiiy o\'sish burchagi.',
-      features: ['Tabiiy qalinlik', 'Har qanday shakl', 'Individual dizayn', 'Umrbod natija'],
-      image: 'https://img.freepik.com/free-photo/half-man-s-face-with-beard_171337-17203.jpg'
-    },
-    {
-      title: 'PRP-terapiya',
-      description: 'Sochni mustahkamlash uchun innovatsion plazma terapiyasi. Tabiiy o\'sishni rag\'batlantiradi, soch sifati va tuzilishini yaxshilaydi, jarrohlik aralashuvisiz to\'kilishni to\'xtatadi.',
-      features: ['Operatsiyasiz', 'Sochni mustahkamlash', 'O\'sishni rag\'batlantirish', 'To\'kilishning oldini olish'],
-      image: 'https://img.freepik.com/free-photo/adult-male-doing-follicular-unit-extraction_23-2149106334.jpg'
-    }
-  ];
-
-  const stats = [
-    { number: '8+', label: 'Yillik tajriba', icon: Award },
-    { number: '5000+', label: 'Soat amaliyot', icon: Clock },
-    { number: '2000+', label: 'Muvaffaqiyatli operatsiya', icon: Users },
-    { number: '98%', label: 'Mamnun bemorlar', icon: Star }
-  ];
-
-  const certificates = [
-    {
-      year: '2018',
-      title: 'Toshkent tibbiyot akademiyasi',
-      specialty: 'Umumiy vrach amaliyoti',
-      image: '/photo_2025-11-14_02-48-28.jpg'
-    },
-    {
-      year: '2021',
-      title: 'Toshkent tibbiyot akademiyasi',
-      specialty: 'Jarrohlik bo\'yicha magistrlik darajasi',
-      image: '/photo_2025-11-14_02-48-25.jpg'
-    },
-    {
-      year: '2022',
-      title: 'Malaka oshirish markazi',
-      specialty: 'Plastik jarrohlik',
-      image: '/photo_2025-11-14_02-48-16.jpg'
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: 'Farxod R.',
-      date: 'Oktyabr 2025',
-      text: 'Ajoyib natija! Doktor Usmanov haqiqiy professional. Protsedura qulay o\'tdi, natija barcha kutilganlardan oshib ketdi. Sochlar mutlaqo tabiiy ko\'rinadi.',
-      rating: 5
-    },
-    {
-      name: 'Aziz M.',
-      date: 'Sentyabr 2025',
-      text: 'FUE usuli bilan ko\'chirishni qildim. Juda mamnunman! Chandiqlar yo\'q, tez tiklanish. Doktor hamma narsani batafsil tushuntirdi, butun jarayon nazorat ostida edi. Tavsiya qilaman!',
-      rating: 5
-    },
-    {
-      name: 'Shaxzod K.',
-      date: 'Avgust 2025',
-      text: 'Uzoq vaqt klinika tanladim, doktor Usmanovni tanladim - bir soniya ham afsuslanmadim. Zamonaviy uskunalar, yuqori professionallik, individual yondashuv. Natija ajoyib!',
-      rating: 5
-    }
-  ];
-
-  const advantages = [
-    {
-      title: 'Xalqaro malaka',
-      description: 'Ko\'p yillik tajribaga ega ISHRS va AAHRS a\'zosi, xalqaro standartlar bo\'yicha ishlaydi',
-      icon: Award
-    },
-    {
-      title: 'Zamonaviy jihozlar',
-      description: 'Eng so\'nggi avlod texnologiyalari va asboblaridan foydalanamiz',
-      icon: CheckCircle
-    },
-    {
-      title: 'Individual yondashuv',
-      description: 'Har bir bemorning xususiyatlarini hisobga olgan holda shaxsiy davolash rejasi',
-      icon: Users
-    },
-    {
-      title: 'Sifat kafolati',
-      description: 'Konsultatsiyadan to\'liq tiklanishgacha to\'liq qo\'llab-quvvatlash',
-      icon: Star
-    }
-  ];
-
-  const serviceOptions = ['FUE usuli', 'DHI usuli', 'Soqol ko\'chirish', 'Qosh ko\'chirish', 'PRP-terapiya'];
-
-  // Language switcher SVG flags
-  const RussianFlag = () => (
-    <img src="/ru.svg" alt="Rus Flag" className="h-5 w-auto rounded-[3px]" />
-  );
-
-  const UzbFlag = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="24" height="7" fill="#1EB53A" />
-      <rect y="7" width="24" height="2" fill="#CE1126" />
-      <rect y="9" width="24" height="6" fill="#FFFFFF" />
-      <rect y="15" width="24" height="2" fill="#CE1126" />
-      <rect y="17" width="24" height="7" fill="#0099B5" />
-      <circle cx="5" cy="5" r="2" fill="#FFFFFF" />
-      <circle cx="7" cy="3.5" r="0.4" fill="#FFFFFF" />
-      <circle cx="8" cy="5" r="0.4" fill="#FFFFFF" />
-      <circle cx="7" cy="6.5" r="0.4" fill="#FFFFFF" />
-    </svg>
-  );
 
   return (
     <div className="min-h-screen bg-white">
@@ -210,9 +204,9 @@ export default function HairTransplantLanding() {
             <a
               href="/ru"
               className="flex items-center space-x-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-all"
-              title="Переключить на русский"
+              title="Русский тилига ўтиш"
             >
-              <RussianFlag />
+              <RuFlag />
               <span className="text-sm font-medium text-gray-700">RU</span>
             </a>
 
@@ -234,13 +228,16 @@ export default function HairTransplantLanding() {
 
       {/* Offcanvas Mobile Menu */}
       <div className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+        {/* Backdrop */}
         <div
           className="absolute inset-0 bg-black/50 backdrop-blur-sm"
           onClick={() => setMobileMenuOpen(false)}
         ></div>
 
+        {/* Offcanvas Panel */}
         <div className={`absolute right-0 top-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex flex-col h-full">
+            {/* Header */}
             <div className="flex items-center justify-between p-6">
               <img src="/oybek-logo.png" alt="Dr. Usmanov" className="h-10 w-auto" />
               <button
@@ -251,8 +248,10 @@ export default function HairTransplantLanding() {
               </button>
             </div>
 
+            {/* Menu Items */}
             <div className="flex-1 overflow-y-auto py-6">
               <div className="space-y-2 px-4">
+
                 <a href="#services"
                   onClick={(e) => smoothScroll(e, 'services')}
                   className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#f3852e]/10 hover:to-[#c96641]/10 hover:text-[#f3852e] rounded-xl font-medium transition-all"
@@ -286,26 +285,29 @@ export default function HairTransplantLanding() {
                   href="/ru"
                   className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#f3852e]/10 hover:to-[#c96641]/10 hover:text-[#f3852e] rounded-xl font-medium transition-all"
                 >
-                  <RussianFlag />
+                  <RuFlag />
                   <span>Русский</span>
                 </a>
               </div>
             </div>
 
+            {/* CTA Button */}
             <div className="p-6">
+
               <a href="#contact"
                 onClick={(e) => smoothScroll(e, 'contact')}
                 className="block bg-gradient-to-r from-[#f3852e] to-[#c96641] text-white px-6 py-4 rounded-2xl text-center font-semibold shadow-lg hover:shadow-xl transition-all"
               >
                 Ariza qoldirish
               </a>
-            </div>
-          </div>
-        </div>
-      </div>
+            </div >
+          </div >
+        </div >
+      </div >
 
       {/* Hero Section with Slider */}
       <section className="relative pt-20 overflow-hidden">
+        {/* Slider Background */}
         <div className="absolute inset-0 z-0">
           {heroSlides.map((slide, index) => (
             <div
@@ -320,10 +322,12 @@ export default function HairTransplantLanding() {
 
         <div className="max-w-7xl mx-auto px-4 relative z-10 py-24 md:py-32 min-h-[650px] md:min-h-[700px] flex items-center">
           <div className="max-w-3xl w-full">
+            {/* Badge */}
             <div className="inline-block bg-gradient-to-r from-[#f3852e] to-[#c96641] text-white px-6 py-2 rounded-full text-sm font-semibold mb-6 relative z-20">
               ISHRS • AAHRS • Trixologlar uyushmasi a'zosi
             </div>
 
+            {/* Content with Animation */}
             <div className="relative min-h-[280px] md:min-h-[320px] mb-8">
               {heroSlides.map((slide, index) => (
                 <div
@@ -345,6 +349,7 @@ export default function HairTransplantLanding() {
               ))}
             </div>
 
+            {/* CTA Button */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8 relative z-20">
               <a
                 href="#contact"
@@ -356,6 +361,7 @@ export default function HairTransplantLanding() {
               </a>
             </div>
 
+            {/* Slider Controls */}
             <div className="flex items-center space-x-4 relative z-20">
               <button
                 onClick={() => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)}
@@ -394,7 +400,7 @@ export default function HairTransplantLanding() {
               Professionalga <span className="bg-gradient-to-r from-[#f3852e] to-[#c96641] bg-clip-text text-transparent">ishoning</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ko'p yillik tajriba va minglab muvaffaqiyatli operatsiyalar - sifatli natijaning kafolati
+              Ko'p yillik tajriba va minglab muvaffaqiyatli operatsiyalar - sizning sifatli natijangiz kafolati
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -405,7 +411,7 @@ export default function HairTransplantLanding() {
                     <stat.icon className="text-white" size={28} />
                   </div>
                   <div>
-                    <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#f3852e] to-[#c96641] bg-clip-text text-transparent mb-2">{stat.number}</div>
+                    <div className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#f3852e] to-[#c96641] bg-clip-text text-transparent mb-2">{stat.number}</div>
                     <div className="text-gray-600 font-medium text-base md:text-lg">{stat.label}</div>
                   </div>
                 </div>
@@ -420,13 +426,14 @@ export default function HairTransplantLanding() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-              Bizning <span className="bg-gradient-to-r from-[#f3852e] to-[#c96641] bg-clip-text text-transparent">xizmatlar</span>
+              Bizning <span className="bg-gradient-to-r from-[#f3852e] to-[#c96641] bg-clip-text text-transparent">xizmatlarimiz</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ilg'or xalqaro metodikalardan foydalangan holda soch tiklash bo'yicha to'liq xizmatlar spektri
+              Ilg'or xalqaro metodikalar qo'llanilgan holda sochni tiklashning to'liq spektri
             </p>
           </div>
 
+          {/* Desktop Tabs */}
           <div className="hidden md:grid md:grid-cols-4 gap-3 mb-12">
             {services.map((service, index) => (
               <button
@@ -447,6 +454,7 @@ export default function HairTransplantLanding() {
             ))}
           </div>
 
+          {/* Desktop Service Display */}
           <div className="hidden md:block bg-white rounded-3xl overflow-hidden shadow-2xl">
             <div className="grid md:grid-cols-2 gap-0">
               <div className="relative h-[600px] overflow-hidden">
@@ -479,6 +487,7 @@ export default function HairTransplantLanding() {
             </div>
           </div>
 
+          {/* Mobile Service Cards */}
           <div className="md:hidden space-y-6">
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-xl">
@@ -525,6 +534,7 @@ export default function HairTransplantLanding() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {/* Large Image Block */}
             <div className="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden shadow-2xl group">
               <img
                 src="#"
@@ -534,29 +544,32 @@ export default function HairTransplantLanding() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8">
                 <h3 className="text-3xl font-bold text-white mb-3">Trixologiyada 8 yillik tajriba</h3>
-                <p className="text-gray-200 text-lg">ISHRS va AAHRS xalqaro uyushmalar a'zosi</p>
+                <p className="text-gray-200 text-lg">ISHRS va AAHRS xalqaro uyushmalari a'zosi</p>
               </div>
             </div>
 
+            {/* Text Block */}
             <div className="bg-gradient-to-br from-[#f3852e]/10 to-[#c96641]/5 p-8 rounded-3xl">
               <div className="w-14 h-14 bg-gradient-to-br from-[#f3852e] to-[#c96641] rounded-2xl flex items-center justify-center mb-6">
                 <Award className="text-white" size={28} />
               </div>
               <h4 className="text-2xl font-bold text-gray-900 mb-4">Ta'lim</h4>
               <p className="text-gray-600 leading-relaxed">
-                Toshkent tibbiyot akademiyasi bitiruvchisi. Vrachlarni takomillashtirish institutida dermatovenerologiya bo'yicha mutaxassislik.
+                Toshkent tibbiyot akademiyasi bitiruvchisi. Shifokorlarni malakasini oshirish institutida dermatovenerologiya bo'yicha mutaxassislik.
               </p>
             </div>
 
+            {/* Stats Block */}
             <div className="bg-gradient-to-br from-[#f3852e] to-[#c96641] p-8 rounded-3xl text-white">
               <div className="text-5xl font-bold mb-2">2000+</div>
-              <div className="text-xl text-white/90 mb-4">Muvaffaqiyatli operatsiya</div>
+              <div className="text-xl text-white/90 mb-4">Muvaffaqiyatli operatsiyalar</div>
               <p className="text-white/80">
                 Har bir protsedura maksimal aniqlik va bemor haqida g'amxo'rlik bilan amalga oshiriladi
               </p>
             </div>
           </div>
 
+          {/* Advantages Grid */}
           <div className="grid md:grid-cols-4 gap-6">
             {advantages.map((advantage, index) => (
               <div key={index} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all group">
@@ -569,18 +582,19 @@ export default function HairTransplantLanding() {
             ))}
           </div>
 
+          {/* Additional Info */}
           <div className="mt-12 bg-gradient-to-r from-gray-50 to-white md:p-12 p-6 rounded-3xl">
             <div className="mx-auto">
               <h3 className="text-3xl font-bold text-gray-900 mb-6">Doktor haqida</h3>
               <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
                 <p>
-                  Doktor Oybek Usmanov — jarrohlik va rekonstruktiv-estetik tibbiyot sohasida mutaxassis, soch tiklash sohasida amaliyot olib boradi. Ta'lim umumiy vrach amaliyoti bo'yicha bakalavriyat, jarrohlik bo'yicha magistratura, shuningdek, Tibbiyot xodimlarining professional malaka markazi bilan olingan plastik jarrohlik bo'yicha ikkilamchi mutaxassislikni o'z ichiga oladi.
+                  Doktor Oybek Usmanov — jarrohlik va rekonstruktiv-estetik tibbiyot sohasida mutaxassis bo'lib, sochni tiklash sohasida amaliyot olib boradi. Ta'limi umumiy shifokorlik amaliyoti bo'yicha bakalavr, jarrohlik bo'yicha magistrlik, shuningdek, Tibbiyot xodimlari professional malaka markazida olingan plastik jarrohlik bo'yicha ikkilamchi mutaxassislikni o'z ichiga oladi.
                 </p>
                 <p>
-                  2021 yildan beri estetik tibbiyot bilan shug'ullanadi, soch tiklash usullariga alohida e'tibor beradi. Doimiy ravishda malakasini oshiradi va ko'nikmalarini kengaytiradi, yetakchi mutaxassislardan ta'lim oladi va professional tibbiy dasturlarda ishtirok etadi.
+                  2021 yildan beri estetik tibbiyot bilan shug'ullanib, sochni tiklash usullariga alohida e'tibor beradi. Doimiy ravishda malakasini oshiradi va ko'nikmalarini kengaytiradi, yetakchi mutaxassislardan o'rganadi va professional tibbiy dasturlarda qatnashadi.
                 </p>
                 <p>
-                  Amaliyotda FUE, DHI kabi zamonaviy kam invaziv soch ko'chirish usullaridan, shuningdek, soqol va qoshlarni rekonstruksiya qilishdan foydalanadi. Xavfsizlikka, natijaning tabiiyligi va har bir bemorga individual yondashuvga katta e'tibor beradi.
+                  Amaliyotda FUE, DHI, shuningdek soqol va qoshlarni rekonstruksiya qilishni o'z ichiga olgan zamonaviy minimal invaziv soch ko'chirish metodikalarini qo'llaydi. Xavfsizlik, natijaning tabiiylik va har bir bemorga individual yondashuvga katta e'tibor beradi.
                 </p>
               </div>
             </div>
@@ -607,6 +621,7 @@ export default function HairTransplantLanding() {
                 onClick={() => setCertificateModal(cert)}
                 className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2 group cursor-pointer text-left w-full"
               >
+                {/* Certificate Image */}
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={cert.image}
@@ -621,6 +636,7 @@ export default function HairTransplantLanding() {
                   </div>
                 </div>
 
+                {/* Certificate Info */}
                 <div className="p-6">
                   <h4 className="text-xl font-bold text-gray-900 mb-2 leading-tight">{cert.title}</h4>
                   <p className="text-gray-600 flex items-center">
@@ -632,17 +648,18 @@ export default function HairTransplantLanding() {
             ))}
           </div>
 
+          {/* Additional Credentials */}
           <div className="mt-12 bg-gradient-to-r from-[#f3852e] to-[#c96641] rounded-3xl p-8 md:p-12 text-white">
             <div className="text-center mb-8">
               <h3 className="text-3xl md:text-4xl font-bold mb-4">Professional yutuqlar</h3>
               <p className="text-white/90 text-lg max-w-3xl mx-auto">
-                Ko'nikmalarni doimiy takomillashtirish va xalqaro konferentsiyalarda ishtirok etish
+                Ko'nikmalarni doimiy takomillashtirish va xalqaro konferensiyalarda qatnashish
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
                 <div className="text-4xl font-bold mb-2">50+</div>
-                <div className="text-white/90">Xalqaro konferentsiyalar</div>
+                <div className="text-white/90">Xalqaro konferensiyalar</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
                 <div className="text-4xl font-bold mb-2">3</div>
@@ -650,7 +667,7 @@ export default function HairTransplantLanding() {
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
                 <div className="text-4xl font-bold mb-2">100+</div>
-                <div className="text-white/90">Yiliga ta'lim soatlari</div>
+                <div className="text-white/90">Har yili o'quv soatlari</div>
               </div>
             </div>
           </div>
@@ -696,7 +713,7 @@ export default function HairTransplantLanding() {
               Bemorlar <span className="bg-gradient-to-r from-[#f3852e] to-[#c96641] bg-clip-text text-transparent">sharhlari</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              2000 dan ortiq mamnun bemor o'z sog'lig'ini doktor Usmanovga ishonib topshiradi
+              2000 dan ortiq mamnun bemorlar sog'liklarini doktor Usmanovga ishonib topshiradilar
             </p>
           </div>
 
@@ -735,7 +752,7 @@ export default function HairTransplantLanding() {
                 Yangi hayotni boshlashga tayyormisiz?
               </h2>
               <p className="text-lg md:text-xl text-white/90 mb-10 max-w-3xl mx-auto">
-                Bepul konsultatsiyaga yozilib, qaysi soch tiklash usuli aynan siz uchun mos ekanligini bilib oling
+                Bepul konsultatsiyaga yozilib, aynan sizga qaysi sochni tiklash usuli mos kelishini bilib oling
               </p>
               <a href="#contact" onClick={(e) => smoothScroll(e, 'contact')} className="inline-flex items-center space-x-3 bg-white text-[#f3852e] px-8 md:px-12 py-4 md:py-5 rounded-full font-bold text-lg md:text-xl transition-all transform hover:scale-105 shadow-2xl hover:shadow-3xl">
                 <span>Konsultatsiyaga yozilish</span>
@@ -785,90 +802,13 @@ export default function HairTransplantLanding() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1 text-lg">Manzil</div>
-                    <div className="text-gray-600 text-lg">Toshkent sh., Yunusobod tumani, Adolat mahalla fuqarolar yig'ini, 4-kvartal, 4A</div>
+                    <div className="text-gray-600 text-lg">Toshkent sh., Yunusobod tumani, Adolat mahallasi fuqarolar yig'ini, 4-kvartal, 4A</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 rounded-3xl shadow-xl">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Konsultatsiyaga yozilish</h3>
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-2 text-sm">Ismingiz</label>
-                    <input
-                      type="text"
-                      className="w-full px-5 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#f3852e] focus:ring-4 focus:ring-[#f3852e]/20 outline-none transition-all"
-                      placeholder="Ismingizni kiriting"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-2 text-sm">Telefon</label>
-                    <input
-                      type="tel"
-                      className="w-full px-5 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#f3852e] focus:ring-4 focus:ring-[#f3852e]/20 outline-none transition-all"
-                      placeholder="+998 (__) ___-__-__"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-2 text-sm">Xizmat</label>
-                  <div className="relative">
-                    <button
-                      type="button"
-                      onClick={() => setSelectOpen(!selectOpen)}
-                      className="w-full px-5 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#f3852e] focus:ring-4 focus:ring-[#f3852e]/20 outline-none transition-all bg-white text-left flex items-center justify-between"
-                    >
-                      <span className={selectedService === 'Xizmatni tanlang' ? 'text-gray-400' : 'text-gray-900'}>
-                        {selectedService}
-                      </span>
-                      <ChevronDown
-                        className={`text-gray-400 transition-transform ${selectOpen ? 'rotate-180' : ''}`}
-                        size={20}
-                      />
-                    </button>
-
-                    {selectOpen && (
-                      <div className="absolute z-10 w-full mt-2 bg-white border-2 border-gray-200 rounded-2xl shadow-xl overflow-hidden">
-                        {serviceOptions.map((option, index) => (
-                          <button
-                            key={index}
-                            type="button"
-                            onClick={() => {
-                              setSelectedService(option);
-                              setSelectOpen(false);
-                            }}
-                            className="w-full px-5 py-3 text-left hover:bg-gradient-to-r hover:from-[#f3852e]/10 hover:to-[#c96641]/10 transition-all text-gray-700 hover:text-[#f3852e] font-medium"
-                          >
-                            {option}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-2 text-sm">Izoh</label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-5 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#f3852e] focus:ring-4 focus:ring-[#f3852e]/20 outline-none transition-all resize-none"
-                    placeholder="Vaziyatingiz haqida gapirib bering"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-[#f3852e] to-[#c96641] hover:from-[#c96641] hover:to-[#f3852e] text-white px-8 py-5 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
-                >
-                  <span>Ariza yuborish</span>
-                  <ArrowRight size={20} />
-                </button>
-              </form>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>
@@ -882,7 +822,7 @@ export default function HairTransplantLanding() {
                 <img src="/oybek-logo.png" alt="Dr. Usmanov" className="h-10 w-auto" />
               </div>
               <p className="text-gray-400 leading-relaxed">
-                Zamonaviy xalqaro FUE va DHI metodikalarini qo'llash bilan professional soch ko'chirish
+                Zamonaviy xalqaro FUE va DHI metodikalar qo'llangan holda professional soch ko'chirish
               </p>
             </div>
 
@@ -897,11 +837,11 @@ export default function HairTransplantLanding() {
             </div>
 
             <div>
-              <h4 className="font-bold text-xl mb-4">Kontaktlar</h4>
+              <h4 className="font-bold text-xl mb-4">Aloqa</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>+998 97 421 11 12</li>
                 <li>info@drusmanov.uz</li>
-                <li>Toshkent sh., Yunusobod tumani, Adolat mahalla fuqarolar yig'ini, 4-kvartal, 4A</li>
+                <li>Toshkent sh., Yunusobod tumani, Adolat mahallasi fuqarolar yig'ini, 4-kvartal, 4A</li>
               </ul>
             </div>
           </div>

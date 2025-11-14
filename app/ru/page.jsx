@@ -2,14 +2,145 @@
 
 import { useState, useEffect } from 'react';
 import { ChevronRight, Award, Clock, Users, CheckCircle, Phone, Mail, MapPin, Star, ArrowRight, Menu, X, ChevronLeft, ChevronDown } from 'lucide-react';
+import ContactForm from './ContactForm';
+
+// ============================================
+// СТАТИЧНЫЕ ДАННЫЕ (ВНЕ КОМПОНЕНТА)
+// ============================================
+
+const heroSlides = [
+  {
+    title: "Восстановите свою уверенность",
+    subtitle: "Естественные результаты с методом FUE",
+    image: "/happy-beard-man.jpg"
+  },
+  {
+    title: "Современные технологии",
+    subtitle: "Безболезненная процедура с быстрым восстановлением",
+    image: "/pills-yellow-bg.jpg"
+  },
+  {
+    title: "Более 2000 успешных операций",
+    subtitle: "Международный опыт и сертификация",
+    image: "/man-with-beard.avif"
+  }
+];
+
+const services = [
+  {
+    title: 'Метод FUE',
+    description: 'Инновационный бесшовный метод пересадки волос - золотой стандарт современной трихологии. Минимальная травматизация, естественный угол роста волос, быстрое восстановление без видимых следов.',
+    features: ['Без видимых шрамов', 'Восстановление 3-5 дней', 'Естественный результат', 'До 6000 графтов за сеанс'],
+    image: '/FUE-method.jpg'
+  },
+  {
+    title: 'DHI метод',
+    description: 'Прямая имплантация волос без предварительного создания каналов. Революционная технология, обеспечивающая максимальную плотность и точность размещения трансплантатов.',
+    features: ['Высокая плотность', 'Точная имплантация', 'Минимальная травма', 'Быстрое заживление'],
+    image: '/DHI-method.jpg'
+  },
+  {
+    title: 'Трансплантация бороды',
+    description: 'Создание густой, естественной бороды любой формы. Индивидуальный дизайн с учетом черт лица, естественный угол роста волос для максимальной натуральности.',
+    features: ['Естественная густота', 'Любая форма', 'Индивидуальный дизайн', 'Пожизненный результат'],
+    image: 'https://img.freepik.com/free-photo/half-man-s-face-with-beard_171337-17203.jpg'
+  },
+  {
+    title: 'PRP-терапия',
+    description: 'Инновационная плазмотерапия для укрепления волос. Стимулирует естественный рост, улучшает качество и структуру волос, останавливает выпадение без хирургического вмешательства.',
+    features: ['Безоперационно', 'Укрепление волос', 'Стимуляция роста', 'Профилактика выпадения'],
+    image: 'https://img.freepik.com/free-photo/adult-male-doing-follicular-unit-extraction_23-2149106334.jpg'
+  }
+];
+
+const stats = [
+  { number: '8+', label: 'Лет опыта работы', icon: Award },
+  { number: '5000+', label: 'Часов практики', icon: Clock },
+  { number: '2000+', label: 'Успешных операций', icon: Users },
+  { number: '98%', label: 'Довольных пациентов', icon: Star }
+];
+
+const certificates = [
+  {
+    year: '2018',
+    title: 'Ташкентская медицинская академия',
+    specialty: 'Общая врачебная практика',
+    image: '/photo_2025-11-14_02-48-28.jpg'
+  },
+  {
+    year: '2021',
+    title: 'Ташкентская медицинская академия',
+    specialty: 'Степень магистра по хирургии',
+    image: '/photo_2025-11-14_02-48-25.jpg'
+  },
+  {
+    year: '2022',
+    title: 'Центр повышения квалификации',
+    specialty: 'Пластическая хирургия',
+    image: '/photo_2025-11-14_02-48-16.jpg'
+  }
+];
+
+const testimonials = [
+  {
+    name: 'Фарход Р.',
+    date: 'Октябрь 2025',
+    text: 'Невероятный результат! Доктор Усманов настоящий профессионал. Процедура прошла комфортно, результат превзошел все ожидания. Волосы выглядят абсолютно естественно.',
+    rating: 5
+  },
+  {
+    name: 'Азиз М.',
+    date: 'Сентябрь 2025',
+    text: 'Сделал пересадку методом FUE. Очень доволен! Никаких шрамов, быстрое восстановление. Доктор все подробно объяснил, весь процесс был под контролем. Рекомендую!',
+    rating: 5
+  },
+  {
+    name: 'Шахзод К.',
+    date: 'Август 2025',
+    text: 'Долго выбирал клинику, остановился на докторе Усманове - не пожалел ни секунды. Современное оборудование, высокий профессионализм, индивидуальный подход. Результат потрясающий!',
+    rating: 5
+  }
+];
+
+const advantages = [
+  {
+    title: 'Международная квалификация',
+    description: 'Член ISHRS и AAHRS с многолетним опытом работы по международным стандартам',
+    icon: Award
+  },
+  {
+    title: 'Современное оборудование',
+    description: 'Используем новейшие технологии и инструменты последнего поколения',
+    icon: CheckCircle
+  },
+  {
+    title: 'Индивидуальный подход',
+    description: 'Персональный план лечения с учетом особенностей каждого пациента',
+    icon: Users
+  },
+  {
+    title: 'Гарантия качества',
+    description: 'Полное сопровождение от консультации до полного восстановления',
+    icon: Star
+  }
+];
+
+const serviceOptions = ['Метод FUE', 'DHI метод', 'Трансплантация бороды', 'Пересадка бровей', 'PRP-терапия'];
+
+// Флаги
+const UzbFlag = () => (
+  <img src="/uz.svg" alt="Uzbekistan Flag" className="h-5 w-auto rounded-[3px]" />
+);
+
+// ============================================
+// КОМПОНЕНТ
+// ============================================
 
 export default function HairTransplantLanding() {
   const [activeService, setActiveService] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [selectOpen, setSelectOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState('Выберите услугу');
   const [certificateModal, setCertificateModal] = useState(null);
 
   useEffect(() => {
@@ -54,141 +185,6 @@ export default function HairTransplantLanding() {
     }, 5000);
     return () => clearInterval(timer);
   }, []);
-
-  const heroSlides = [
-    {
-      title: "Восстановите свою уверенность",
-      subtitle: "Естественные результаты с методом FUE",
-      // https://www.freepik.com/free-photo/portrait-man-receiving-enhancements-tweakments-through-help-cosmetic-procedures_138708465.htm#fromView=search&page=4&position=25&uuid=23ddcf9f-af30-4c1a-834d-fa33fe3250b0&query=%D0%BF%D0%B5%D1%80%D0%B5%D1%81%D0%B0%D0%B4%D0%BA%D0%B0+%D0%B2%D0%BE%D0%BB%D0%BE%D1%81
-      image: "/happy-beard-man.jpg"
-    },
-    {
-      title: "Современные технологии",
-      subtitle: "Безболезненная процедура с быстрым восстановлением",
-      image: "/pills-yellow-bg.jpg"
-      // https://www.freepik.com/free-photo/pills-with-medical-mask-desk_7797833.htm#fromView=search&page=1&position=7&uuid=cb9698eb-e087-4416-99f3-8b346c5beacb&query=%D0%B6%D0%B5%D0%BB%D1%82%D1%8B%D0%B9+%D0%BC%D0%B5%D0%B4+%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82
-    },
-    {
-      title: "Более 2000 успешных операций",
-      subtitle: "Международный опыт и сертификация",
-      //https://www.freepik.com/free-photo/portrait-man-receiving-enhancements-tweakments-through-help-cosmetic-procedures_138708423.htm
-      image: "/man-with-beard.avif"
-    }
-  ];
-
-  const services = [
-    {
-      title: 'Метод FUE',
-      description: 'Инновационный бесшовный метод пересадки волос - золотой стандарт современной трихологии. Минимальная травматизация, естественный угол роста волос, быстрое восстановление без видимых следов.',
-      features: ['Без видимых шрамов', 'Восстановление 3-5 дней', 'Естественный результат', 'До 6000 графтов за сеанс'],
-      image: '/FUE-method.jpg'
-    },
-    {
-      title: 'DHI метод',
-      description: 'Прямая имплантация волос без предварительного создания каналов. Революционная технология, обеспечивающая максимальную плотность и точность размещения трансплантатов.',
-      features: ['Высокая плотность', 'Точная имплантация', 'Минимальная травма', 'Быстрое заживление'],
-      image: '/DHI-method.jpg'
-    },
-    {
-      title: 'Трансплантация бороды',
-      description: 'Создание густой, естественной бороды любой формы. Индивидуальный дизайн с учетом черт лица, естественный угол роста волос для максимальной натуральности.',
-      features: ['Естественная густота', 'Любая форма', 'Индивидуальный дизайн', 'Пожизненный результат'],
-      image: 'https://img.freepik.com/free-photo/half-man-s-face-with-beard_171337-17203.jpg'
-    },
-    {
-      title: 'PRP-терапия',
-      description: 'Инновационная плазмотерапия для укрепления волос. Стимулирует естественный рост, улучшает качество и структуру волос, останавливает выпадение без хирургического вмешательства.',
-      features: ['Безоперационно', 'Укрепление волос', 'Стимуляция роста', 'Профилактика выпадения'],
-      image: 'https://img.freepik.com/free-photo/adult-male-doing-follicular-unit-extraction_23-2149106334.jpg'
-    }
-  ];
-
-  const stats = [
-    { number: '8+', label: 'Лет опыта работы', icon: Award },
-    { number: '5000+', label: 'Часов практики', icon: Clock },
-    { number: '2000+', label: 'Успешных операций', icon: Users },
-    { number: '98%', label: 'Довольных пациентов', icon: Star }
-  ];
-
-  const certificates = [
-    {
-      year: '2018',
-      title: 'Ташкентская медицинская академия',
-      specialty: 'Общая врачебная практика',
-      image: '/photo_2025-11-14_02-48-28.jpg'
-    },
-    {
-      year: '2021',
-      title: 'Ташкентская медицинская академия',
-      specialty: 'Степень магистра по хирургии',
-      image: '/photo_2025-11-14_02-48-25.jpg'
-    },
-    {
-      year: '2022',
-      title: 'Центр повышения квалификации',
-      specialty: 'Пластическая хирургия',
-      image: '/photo_2025-11-14_02-48-16.jpg'
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: 'Фарход Р.',
-      date: 'Октябрь 2025',
-      text: 'Невероятный результат! Доктор Усманов настоящий профессионал. Процедура прошла комфортно, результат превзошел все ожидания. Волосы выглядят абсолютно естественно.',
-      rating: 5
-    },
-    {
-      name: 'Азиз М.',
-      date: 'Сентябрь 2025',
-      text: 'Сделал пересадку методом FUE. Очень доволен! Никаких шрамов, быстрое восстановление. Доктор все подробно объяснил, весь процесс был под контролем. Рекомендую!',
-      rating: 5
-    },
-    {
-      name: 'Шахзод К.',
-      date: 'Август 2025',
-      text: 'Долго выбирал клинику, остановился на докторе Усманове - не пожалел ни секунды. Современное оборудование, высокий профессионализм, индивидуальный подход. Результат потрясающий!',
-      rating: 5
-    }
-  ];
-
-  const advantages = [
-    {
-      title: 'Международная квалификация',
-      description: 'Член ISHRS и AAHRS с многолетним опытом работы по международным стандартам',
-      icon: Award
-    },
-    {
-      title: 'Современное оборудование',
-      description: 'Используем новейшие технологии и инструменты последнего поколения',
-      icon: CheckCircle
-    },
-    {
-      title: 'Индивидуальный подход',
-      description: 'Персональный план лечения с учетом особенностей каждого пациента',
-      icon: Users
-    },
-    {
-      title: 'Гарантия качества',
-      description: 'Полное сопровождение от консультации до полного восстановления',
-      icon: Star
-    }
-  ];
-
-  const serviceOptions = ['Метод FUE', 'DHI метод', 'Трансплантация бороды', 'Пересадка бровей', 'PRP-терапия'];
-
-  // Language switcher SVG flags
-  const RussianFlag = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="24" height="8" fill="#FFFFFF" />
-      <rect y="8" width="24" height="8" fill="#0039A6" />
-      <rect y="16" width="24" height="8" fill="#D52B1E" />
-    </svg>
-  );
-
-  const UzbFlag = () => (
-    <img src="/uz.svg" alt="Uzbekistan Flag" className="h-5 w-auto rounded-[3px]" />
-  );
 
   return (
     <div className="min-h-screen bg-white">
@@ -311,22 +307,20 @@ export default function HairTransplantLanding() {
         </div >
       </div >
 
-      {/* Hero Section with Slider - FIXED */}
-      < section className="relative pt-20 overflow-hidden" >
+      {/* Hero Section with Slider */}
+      <section className="relative pt-20 overflow-hidden">
         {/* Slider Background */}
-        < div className="absolute inset-0 z-0" >
-          {
-            heroSlides.map((slide, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
-              >
-                <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/30 to-black/30"></div>
-              </div>
-            ))
-          }
-        </div >
+        <div className="absolute inset-0 z-0">
+          {heroSlides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+            >
+              <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/30 to-black/30"></div>
+            </div>
+          ))}
+        </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10 py-24 md:py-32 min-h-[650px] md:min-h-[700px] flex items-center">
           <div className="max-w-3xl w-full">
@@ -357,7 +351,7 @@ export default function HairTransplantLanding() {
               ))}
             </div>
 
-            {/* CTA Button - Fixed z-index */}
+            {/* CTA Button */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8 relative z-20">
               <a
                 href="#contact"
@@ -369,7 +363,7 @@ export default function HairTransplantLanding() {
               </a>
             </div>
 
-            {/* Slider Controls - Fixed z-index */}
+            {/* Slider Controls */}
             <div className="flex items-center space-x-4 relative z-20">
               <button
                 onClick={() => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)}
@@ -398,10 +392,10 @@ export default function HairTransplantLanding() {
             </div>
           </div>
         </div>
-      </section >
+      </section>
 
-      {/* Stats Section - Improved */}
-      < section className="py-20 bg-white" >
+      {/* Stats Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -419,7 +413,7 @@ export default function HairTransplantLanding() {
                     <stat.icon className="text-white" size={28} />
                   </div>
                   <div>
-                    <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#f3852e] to-[#c96641] bg-clip-text text-transparent mb-2">{stat.number}</div>
+                    <div className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#f3852e] to-[#c96641] bg-clip-text text-transparent mb-2">{stat.number}</div>
                     <div className="text-gray-600 font-medium text-base md:text-lg">{stat.label}</div>
                   </div>
                 </div>
@@ -427,10 +421,10 @@ export default function HairTransplantLanding() {
             ))}
           </div>
         </div>
-      </section >
+      </section>
 
-      {/* Services Section - FIXED */}
-      < section id="services" className="py-20 bg-gradient-to-br from-gray-50 to-white" >
+      {/* Services Section */}
+      <section id="services" className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
@@ -495,7 +489,7 @@ export default function HairTransplantLanding() {
             </div>
           </div>
 
-          {/* Mobile Service Cards - All Visible */}
+          {/* Mobile Service Cards */}
           <div className="md:hidden space-y-6">
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-xl">
@@ -527,10 +521,10 @@ export default function HairTransplantLanding() {
             ))}
           </div>
         </div>
-      </section >
+      </section>
 
       {/* About Section */}
-      < section id="about" className="py-20 bg-white" >
+      <section id="about" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
@@ -608,10 +602,10 @@ export default function HairTransplantLanding() {
             </div>
           </div>
         </div>
-      </section >
+      </section>
 
-      {/* Education Section - WITH MODAL */}
-      < section id="education" className="py-20 bg-gradient-to-br from-gray-50 to-white" >
+      {/* Education Section */}
+      <section id="education" className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
@@ -680,40 +674,38 @@ export default function HairTransplantLanding() {
             </div>
           </div>
         </div>
-      </section >
+      </section>
 
       {/* Certificate Modal */}
-      {
-        certificateModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/30 backdrop-blur-sm">
-            <div className="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl">
-              <button
-                onClick={() => setCertificateModal(null)}
-                className="absolute top-4 right-4 z-10 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors"
-              >
-                <X size={24} className="text-gray-900" />
-              </button>
-              <div className="p-6">
-                <img
-                  src={certificateModal.image}
-                  alt={certificateModal.title}
-                  className="w-full h-auto rounded-2xl"
-                />
-                <div className="mt-6">
-                  <div className="inline-block bg-gradient-to-r from-[#f3852e] to-[#c96641] text-white px-4 py-2 rounded-full font-bold mb-3">
-                    {certificateModal.year}
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{certificateModal.title}</h3>
-                  <p className="text-gray-600 flex items-center">
-                    <CheckCircle className="text-[#f3852e] mr-2" size={20} />
-                    {certificateModal.specialty}
-                  </p>
+      {certificateModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/30 backdrop-blur-sm">
+          <div className="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl">
+            <button
+              onClick={() => setCertificateModal(null)}
+              className="absolute top-4 right-4 z-10 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors"
+            >
+              <X size={24} className="text-gray-900" />
+            </button>
+            <div className="p-6">
+              <img
+                src={certificateModal.image}
+                alt={certificateModal.title}
+                className="w-full h-auto rounded-2xl"
+              />
+              <div className="mt-6">
+                <div className="inline-block bg-gradient-to-r from-[#f3852e] to-[#c96641] text-white px-4 py-2 rounded-full font-bold mb-3">
+                  {certificateModal.year}
                 </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">{certificateModal.title}</h3>
+                <p className="text-gray-600 flex items-center">
+                  <CheckCircle className="text-[#f3852e] mr-2" size={20} />
+                  {certificateModal.specialty}
+                </p>
               </div>
             </div>
           </div>
-        )
-      }
+        </div>
+      )}
 
       {/* Reviews Section */}
       <section id="reviews" className="py-20 bg-white">
@@ -773,7 +765,7 @@ export default function HairTransplantLanding() {
         </div>
       </section>
 
-      {/* Contact Section - Improved Form */}
+      {/* Contact Section */}
       <section id="contact" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
@@ -818,86 +810,7 @@ export default function HairTransplantLanding() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 rounded-3xl shadow-xl">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Запись на консультацию</h3>
-              <form className="space-y-6">
-                {/* Name and Phone on Desktop */}
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-2 text-sm">Ваше имя</label>
-                    <input
-                      type="text"
-                      className="w-full px-5 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#f3852e] focus:ring-4 focus:ring-[#f3852e]/20 outline-none transition-all"
-                      placeholder="Введите имя"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-2 text-sm">Телефон</label>
-                    <input
-                      type="tel"
-                      className="w-full px-5 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#f3852e] focus:ring-4 focus:ring-[#f3852e]/20 outline-none transition-all"
-                      placeholder="+998 (__) ___-__-__"
-                    />
-                  </div>
-                </div>
-
-                {/* Custom Select */}
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-2 text-sm">Услуга</label>
-                  <div className="relative">
-                    <button
-                      type="button"
-                      onClick={() => setSelectOpen(!selectOpen)}
-                      className="w-full px-5 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#f3852e] focus:ring-4 focus:ring-[#f3852e]/20 outline-none transition-all bg-white text-left flex items-center justify-between"
-                    >
-                      <span className={selectedService === 'Выберите услугу' ? 'text-gray-400' : 'text-gray-900'}>
-                        {selectedService}
-                      </span>
-                      <ChevronDown
-                        className={`text-gray-400 transition-transform ${selectOpen ? 'rotate-180' : ''}`}
-                        size={20}
-                      />
-                    </button>
-
-                    {selectOpen && (
-                      <div className="absolute z-10 w-full mt-2 bg-white border-2 border-gray-200 rounded-2xl shadow-xl overflow-hidden">
-                        {serviceOptions.map((option, index) => (
-                          <button
-                            key={index}
-                            type="button"
-                            onClick={() => {
-                              setSelectedService(option);
-                              setSelectOpen(false);
-                            }}
-                            className="w-full px-5 py-3 text-left hover:bg-gradient-to-r hover:from-[#f3852e]/10 hover:to-[#c96641]/10 transition-all text-gray-700 hover:text-[#f3852e] font-medium"
-                          >
-                            {option}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-2 text-sm">Комментарий</label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-5 py-4 rounded-2xl border-2 border-gray-200 focus:border-[#f3852e] focus:ring-4 focus:ring-[#f3852e]/20 outline-none transition-all resize-none"
-                    placeholder="Расскажите о вашей ситуации"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-[#f3852e] to-[#c96641] hover:from-[#c96641] hover:to-[#f3852e] text-white px-8 py-5 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
-                >
-                  <span>Отправить заявку</span>
-                  <ArrowRight size={20} />
-                </button>
-              </form>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>
@@ -940,6 +853,6 @@ export default function HairTransplantLanding() {
           </div>
         </div>
       </footer>
-    </div >
+    </div>
   );
 }
