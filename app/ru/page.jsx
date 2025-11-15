@@ -322,7 +322,7 @@ export default function HairTransplantLanding() {
           ))}
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 relative z-10 py-24 md:py-32 min-h-[650px] md:min-h-[700px] flex items-center">
+        <div className="max-w-7xl mx-auto px-4 relative z-10 py-12 md:py-32 min-h-[420px] md:min-h-[700px] flex items-center">
           <div className="max-w-3xl w-full">
             {/* Badge */}
             <div className="inline-block bg-gradient-to-r from-[#f3852e] to-[#c96641] text-white px-6 py-2 rounded-full text-sm font-semibold mb-6 relative z-20">
@@ -330,7 +330,7 @@ export default function HairTransplantLanding() {
             </div>
 
             {/* Content with Animation */}
-            <div className="relative min-h-[280px] md:min-h-[320px] mb-8">
+            <div className="relative min-h-[200px] md:min-h-[320px] mb-8">
               {heroSlides.map((slide, index) => (
                 <div
                   key={index}
@@ -794,7 +794,7 @@ export default function HairTransplantLanding() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1 text-lg">Email</div>
-                    <div className="text-gray-600 text-lg">info@drusmanov.uz</div>
+                    <div className="text-gray-600 text-lg">info@oybekusmanov.uz</div>
                   </div>
                 </div>
 
@@ -842,7 +842,7 @@ export default function HairTransplantLanding() {
               <h4 className="font-bold text-xl mb-4">Контакты</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>+998 97 421 11 12</li>
-                <li>info@drusmanov.uz</li>
+                <li>info@oybekusmanov.uz</li>
                 <li>г. Ташкент, Юнусабадский район, махаллинский сход граждан Адолат, 4-й квартал, 4А</li>
               </ul>
             </div>
