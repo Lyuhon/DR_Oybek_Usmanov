@@ -91,7 +91,7 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
         <img
             src={isRu ? '/ru.svg' : '/uz.svg'}
             alt="Flag"
-            className="rounded-[3px]"
+            className="rounded-[3px] w-[20px]"
         />
     );
 
