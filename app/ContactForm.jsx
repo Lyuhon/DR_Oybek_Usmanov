@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 
 export default function ContactForm({ t }) {
