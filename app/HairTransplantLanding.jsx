@@ -88,13 +88,10 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
     };
 
     const FlagIcon = ({ isRu }) => (
-        <Image
+        <img
             src={isRu ? '/ru.svg' : '/uz.svg'}
             alt="Flag"
-            width={20}
-            height={15}
             className="rounded-[3px]"
-            loading="eager"
         />
     );
 
@@ -116,7 +113,7 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
 
                         <button
                             onClick={toggleLanguage}
-                            className="flex items-center space-x-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-all"
+                            className="cursor-pointer flex items-center space-x-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-all"
                             title={t.nav.languageName}
                         >
                             <FlagIcon isRu={lang === 'uz'} />
@@ -517,7 +514,8 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                         </div>
                         <div className="grid md:grid-cols-3 gap-6">
                             {t.education.achievementsItems.map((item, idx) => (
-                                <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+                                <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center"
+                                    style={{ border: "1px solid #fff" }}>
                                     <div className="text-4xl font-bold mb-2">{item.number}</div>
                                     <div className="text-white/90">{item.label}</div>
                                 </div>

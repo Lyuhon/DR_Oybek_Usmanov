@@ -161,7 +161,7 @@ export default function ContactForm({ t }) {
                 <button
                     type="submit"
                     disabled={formLoading}
-                    className="w-full bg-gradient-to-r from-[#f3852e] to-[#c96641] hover:from-[#c96641] hover:to-[#f3852e] text-white px-8 py-5 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="cursor-pointer w-full bg-gradient-to-r from-[#f3852e] to-[#c96641] hover:from-[#c96641] hover:to-[#f3852e] text-white px-8 py-5 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     <span>{formLoading ? t.form.submitting : t.form.submit}</span>
                     {!formLoading && <ArrowRight size={20} />}
