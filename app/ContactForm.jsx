@@ -15,6 +15,11 @@ export default function ContactForm({ t }) {
     const [formLoading, setFormLoading] = useState(false);
     const [formMessage, setFormMessage] = useState(null);
 
+    useEffect(() => {
+        setSelectedService(t.form.servicePlaceholder);
+        setFormData(prev => ({ ...prev, service: t.form.servicePlaceholder }));
+    }, [t.form.servicePlaceholder]);
+
     const handlePhoneChange = (e) => {
         let value = e.target.value;
 
