@@ -1,0 +1,480 @@
+{
+    "uz": {
+        "nav": {
+            "services": "Xizmatlar",
+            "about": "Doktor haqida",
+            "education": "Ta'lim",
+            "reviews": "Sharhlar",
+            "consultation": "Konsultatsiya",
+            "languageName": "Русский",
+            "languageCode": "RU"
+        },
+        "hero": {
+            "badge": "ISHRS • AAHRS • Trixologlar uyushmasi a'zosi",
+            "slides": [
+                {
+                    "title": "Ishonchingizni tiklang",
+                    "subtitle": "FUE usuli bilan tabiiy natijalar"
+                },
+                {
+                    "title": "Zamonaviy texnologiyalar",
+                    "subtitle": "Og'riqsiz jarayon va tez tiklanish"
+                },
+                {
+                    "title": "2000 dan ortiq muvaffaqiyatli operatsiya",
+                    "subtitle": "Xalqaro tajriba va sertifikatsiya"
+                }
+            ],
+            "cta": "Konsultatsiyaga yozilish"
+        },
+        "stats": {
+            "title": "Professionalga",
+            "titleHighlight": "ishoning",
+            "subtitle": "Ko'p yillik tajriba va minglab muvaffaqiyatli operatsiyalar - sizning sifatli natijangiz kafolati",
+            "items": [
+                {
+                    "number": "8+",
+                    "label": "Yillik ish tajribasi"
+                },
+                {
+                    "number": "5000+",
+                    "label": "Soatlik amaliyot"
+                },
+                {
+                    "number": "2000+",
+                    "label": "Muvaffaqiyatli operatsiyalar"
+                },
+                {
+                    "number": "98%",
+                    "label": "Mamnun bemorlar"
+                }
+            ]
+        },
+        "services": {
+            "title": "Bizning",
+            "titleHighlight": "xizmatlarimiz",
+            "subtitle": "Ilg'or xalqaro metodikalar qo'llanilgan holda sochni tiklashning to'liq spektri",
+            "cta": "Yozilish",
+            "items": [
+                {
+                    "title": "FUE usuli",
+                    "description": "Innovatsion choklarsiz soch ko'chirish usuli - zamonaviy trixologiyaning oltin standarti. Minimal shikastlanish, tabiiy o'sish burchagi, ko'rinadigan izlarsiz tez tiklanish.",
+                    "features": [
+                        "Ko'rinadigan chandiqlar yo'q",
+                        "3-5 kunlik tiklanish",
+                        "Tabiiy natija",
+                        "Bir seansda 6000 tagacha graft"
+                    ]
+                },
+                {
+                    "title": "DHI usuli",
+                    "description": "Kanallar yaratmasdan to'g'ridan-to'g'ri soch implantatsiyasi. Maksimal zichlik va transplantlarni aniq joylashtiruvchi inqilobiy texnologiya.",
+                    "features": [
+                        "Yuqori zichlik",
+                        "Aniq implantatsiya",
+                        "Minimal shikastlanish",
+                        "Tez bitish"
+                    ]
+                },
+                {
+                    "title": "Soqol transplantatsiyasi",
+                    "description": "Har qanday shaklda qalin, tabiiy soqol yaratish. Yuz chiziqlarini hisobga olgan holda individual dizayn, maksimal tabiiylik uchun tabiiy o'sish burchagi.",
+                    "features": [
+                        "Tabiiy qalinlik",
+                        "Har qanday shakl",
+                        "Individual dizayn",
+                        "Umrbod natija"
+                    ]
+                },
+                {
+                    "title": "PRP-terapiya",
+                    "description": "Sochni mustahkamlash uchun innovatsion plazmaterapiya. Tabiiy o'sishni rag'batlantiradi, soch sifati va tuzilmasini yaxshilaydi, jarrohlik aralashmasiz to'kilishni to'xtatadi.",
+                    "features": [
+                        "Operatsiyasiz",
+                        "Sochni mustahkamlash",
+                        "O'sishni rag'batlantirish",
+                        "To'kilishni oldini olish"
+                    ]
+                }
+            ]
+        },
+        "about": {
+            "title": "Doktor",
+            "titleHighlight": "Oybek Usmanov",
+            "subtitle": "Xalqaro malakaga ega jarroh-trixolog",
+            "imageTitle": "Trixologiyada 8 yillik tajriba",
+            "imageSubtitle": "ISHRS va AAHRS xalqaro uyushmalari a'zosi",
+            "educationTitle": "Ta'lim",
+            "educationText": "Toshkent tibbiyot akademiyasi bitiruvchisi. Shifokorlarni malakasini oshirish institutida dermatovenerologiya bo'yicha mutaxassislik.",
+            "statsNumber": "2000+",
+            "statsTitle": "Muvaffaqiyatli operatsiyalar",
+            "statsText": "Har bir protsedura maksimal aniqlik va bemor haqida g'amxo'rlik bilan amalga oshiriladi",
+            "advantagesTitle": "Doktor haqida",
+            "advantages": [
+                {
+                    "title": "Xalqaro malaka",
+                    "description": "ISHRS va AAHRS a'zosi, xalqaro standartlar bo'yicha ko'p yillik ish tajribasi"
+                },
+                {
+                    "title": "Zamonaviy jihozlar",
+                    "description": "Eng yangi texnologiyalar va oxirgi avlod asboblaridan foydalanamiz"
+                },
+                {
+                    "title": "Individual yondashuv",
+                    "description": "Har bir bemorning xususiyatlarini hisobga olgan holda shaxsiy davolash rejasi"
+                },
+                {
+                    "title": "Sifat kafolati",
+                    "description": "Konsultatsiyadan to to'liq tiklanishgacha to'liq kuzatuv"
+                }
+            ],
+            "bioText": [
+                "Doktor Oybek Usmanov — jarrohlik va rekonstruktiv-estetik tibbiyot sohasida mutaxassis bo'lib, sochni tiklash sohasida amaliyot olib boradi. Ta'limi umumiy shifokorlik amaliyoti bo'yicha bakalavr, jarrohlik bo'yicha magistrlik, shuningdek, Tibbiyot xodimlari professional malaka markazida olingan plastik jarrohlik bo'yicha ikkilamchi mutaxassislikni o'z ichiga oladi.",
+                "2021 yildan beri estetik tibbiyot bilan shug'ullanib, sochni tiklash usullariga alohida e'tibor beradi. Doimiy ravishda malakasini oshiradi va ko'nikmalarini kengaytiradi, yetakchi mutaxassislardan o'rganadi va professional tibbiy dasturlarda qatnashadi.",
+                "Amaliyotda FUE, DHI, shuningdek soqol va qoshlarni rekonstruksiya qilishni o'z ichiga olgan zamonaviy minimal invaziv soch ko'chirish metodikalarini qo'llaydi. Xavfsizlik, natijaning tabiiylik va har bir bemorga individual yondashuvga katta e'tibor beradi."
+            ]
+        },
+        "education": {
+            "title": "Ta'lim va",
+            "titleHighlight": "sertifikatlar",
+            "subtitle": "Uzluksiz professional rivojlanish va xalqaro tan olinish",
+            "achievementsTitle": "Professional yutuqlar",
+            "achievementsSubtitle": "Ko'nikmalarni doimiy takomillashtirish va xalqaro konferensiyalarda qatnashish",
+            "achievementsItems": [
+                {
+                    "number": "50+",
+                    "label": "Xalqaro konferensiyalar"
+                },
+                {
+                    "number": "3",
+                    "label": "Uyushmalarda a'zolik"
+                },
+                {
+                    "number": "100+",
+                    "label": "Har yili o'quv soatlari"
+                }
+            ],
+            "certificates": [
+                {
+                    "year": "2018",
+                    "title": "Toshkent tibbiyot akademiyasi",
+                    "specialty": "Umumiy shifokorlik amaliyoti"
+                },
+                {
+                    "year": "2021",
+                    "title": "Toshkent tibbiyot akademiyasi",
+                    "specialty": "Jarrohlik bo'yicha magistrlik darajasi"
+                },
+                {
+                    "year": "2022",
+                    "title": "Malaka oshirish markazi",
+                    "specialty": "Plastik jarrohlik"
+                }
+            ]
+        },
+        "reviews": {
+            "title": "Bemorlar",
+            "titleHighlight": "sharhlari",
+            "subtitle": "2000 dan ortiq mamnun bemorlar sog'liklarini doktor Usmanovga ishonib topshiradilar",
+            "items": [
+                {
+                    "name": "Farxod R.",
+                    "date": "Oktyabr 2025",
+                    "text": "Ajoyib natija! Doktor Usmanov haqiqiy professional. Protsedura qulay o'tdi, natija barcha kutganimdan oshib ketdi. Sochlar mutlaqo tabiiy ko'rinadi."
+                },
+                {
+                    "name": "Aziz M.",
+                    "date": "Sentyabr 2025",
+                    "text": "FUE usuli bilan ko'chirishni qildim. Juda mamnunman! Hech qanday chandiq yo'q, tez tiklanish. Doktor hamma narsani batafsil tushuntirdi, butun jarayon nazorat ostida edi. Tavsiya qilaman!"
+                },
+                {
+                    "name": "Shaxzod K.",
+                    "date": "Avgust 2025",
+                    "text": "Uzoq vaqt klinika tanladim, doktor Usmanovda to'xtadim - bir soniya ham afsuslanmadim. Zamonaviy jihozlar, yuqori professionallik, individual yondashuv. Natija ajoyib!"
+                }
+            ]
+        },
+        "cta": {
+            "title": "Yangi hayotni boshlashga tayyormisiz?",
+            "subtitle": "Bepul konsultatsiyaga yozilib, aynan sizga qaysi sochni tiklash usuli mos kelishini bilib oling",
+            "button": "Konsultatsiyaga yozilish"
+        },
+        "contact": {
+            "title": "Biz bilan",
+            "titleHighlight": "bog'laning",
+            "subtitle": "Bepul konsultatsiyaga yozilib, professional tavsiyalar oling",
+            "phone": "Telefon",
+            "email": "Email",
+            "address": "Manzil",
+            "addressText": "Toshkent sh., Yunusobod tumani, Adolat mahallasi fuqarolar yig'ini, 4-kvartal, 4A"
+        },
+        "form": {
+            "title": "Konsultatsiyaga yozilish",
+            "name": "Ismingiz",
+            "namePlaceholder": "Ismingizni kiriting",
+            "phone": "Telefon",
+            "phonePlaceholder": "+998 901234567",
+            "service": "Xizmat",
+            "servicePlaceholder": "Xizmatni tanlang",
+            "comment": "Izoh",
+            "commentPlaceholder": "Vaziyatingiz haqida gapirib bering",
+            "submit": "Ariza yuborish",
+            "submitting": "Yuborilmoqda...",
+            "success": "Ariza yuborildi!",
+            "error": "Yuborishda xatolik",
+            "phoneError": "+998 dan keyin 9 ta raqam kiriting",
+            "serviceOptions": [
+                "FUE usuli",
+                "DHI usuli",
+                "Soqol transplantatsiyasi",
+                "Qosh ko'chirish",
+                "PRP-terapiya"
+            ]
+        },
+        "footer": {
+            "description": "Zamonaviy xalqaro FUE va DHI metodikalar qo'llangan holda professional soch ko'chirish",
+            "navigation": "Navigatsiya",
+            "contacts": "Aloqa",
+            "copyright": "© 2025 Doktor Oybek Usmanov. Barcha huquqlar himoyalangan."
+        }
+    },
+    "ru": {
+        "nav": {
+            "services": "Услуги",
+            "about": "О докторе",
+            "education": "Образование",
+            "reviews": "Отзывы",
+            "consultation": "Консультация",
+            "languageName": "Uzbek",
+            "languageCode": "UZB"
+        },
+        "hero": {
+            "badge": "Член ISHRS • AAHRS • Союз трихологов",
+            "slides": [
+                {
+                    "title": "Восстановите свою уверенность",
+                    "subtitle": "Естественные результаты с методом FUE"
+                },
+                {
+                    "title": "Современные технологии",
+                    "subtitle": "Безболезненная процедура с быстрым восстановлением"
+                },
+                {
+                    "title": "Более 2000 успешных операций",
+                    "subtitle": "Международный опыт и сертификация"
+                }
+            ],
+            "cta": "Записаться на консультацию"
+        },
+        "stats": {
+            "title": "Доверьтесь",
+            "titleHighlight": "профессионалу",
+            "subtitle": "Многолетний опыт и тысячи успешных операций - ваша гарантия качественного результата",
+            "items": [
+                {
+                    "number": "8+",
+                    "label": "Лет опыта работы"
+                },
+                {
+                    "number": "5000+",
+                    "label": "Часов практики"
+                },
+                {
+                    "number": "2000+",
+                    "label": "Успешных операций"
+                },
+                {
+                    "number": "98%",
+                    "label": "Довольных пациентов"
+                }
+            ]
+        },
+        "services": {
+            "title": "Наши",
+            "titleHighlight": "услуги",
+            "subtitle": "Полный спектр услуг по восстановлению волос с применением передовых международных методик",
+            "cta": "Записаться",
+            "items": [
+                {
+                    "title": "Метод FUE",
+                    "description": "Инновационный бесшовный метод пересадки волос - золотой стандарт современной трихологии. Минимальная травматизация, естественный угол роста волос, быстрое восстановление без видимых следов.",
+                    "features": [
+                        "Без видимых шрамов",
+                        "Восстановление 3-5 дней",
+                        "Естественный результат",
+                        "До 6000 графтов за сеанс"
+                    ]
+                },
+                {
+                    "title": "DHI метод",
+                    "description": "Прямая имплантация волос без предварительного создания каналов. Революционная технология, обеспечивающая максимальную плотность и точность размещения трансплантатов.",
+                    "features": [
+                        "Высокая плотность",
+                        "Точная имплантация",
+                        "Минимальная травма",
+                        "Быстрое заживление"
+                    ]
+                },
+                {
+                    "title": "Трансплантация бороды",
+                    "description": "Создание густой, естественной бороды любой формы. Индивидуальный дизайн с учетом черт лица, естественный угол роста волос для максимальной натуральности.",
+                    "features": [
+                        "Естественная густота",
+                        "Любая форма",
+                        "Индивидуальный дизайн",
+                        "Пожизненный результат"
+                    ]
+                },
+                {
+                    "title": "PRP-терапия",
+                    "description": "Инновационная плазмотерапия для укрепления волос. Стимулирует естественный рост, улучшает качество и структуру волос, останавливает выпадение без хирургического вмешательства.",
+                    "features": [
+                        "Безоперационно",
+                        "Укрепление волос",
+                        "Стимуляция роста",
+                        "Профилактика выпадения"
+                    ]
+                }
+            ]
+        },
+        "about": {
+            "title": "Доктор",
+            "titleHighlight": "Ойбек Усманов",
+            "subtitle": "Хирург-трихолог с международной квалификацией",
+            "imageTitle": "8 лет опыта в трихологии",
+            "imageSubtitle": "Член международных ассоциаций ISHRS и AAHRS",
+            "educationTitle": "Образование",
+            "educationText": "Выпускник Ташкентской Медицинской Академии. Специализация по дерматовенерологии в Институте Усовершенствования Врачей.",
+            "statsNumber": "2000+",
+            "statsTitle": "Успешных операций",
+            "statsText": "Каждая процедура выполняется с максимальной точностью и заботой о пациенте",
+            "advantagesTitle": "О докторе",
+            "advantages": [
+                {
+                    "title": "Международная квалификация",
+                    "description": "Член ISHRS и AAHRS с многолетним опытом работы по международным стандартам"
+                },
+                {
+                    "title": "Современное оборудование",
+                    "description": "Используем новейшие технологии и инструменты последнего поколения"
+                },
+                {
+                    "title": "Индивидуальный подход",
+                    "description": "Персональный план лечения с учетом особенностей каждого пациента"
+                },
+                {
+                    "title": "Гарантия качества",
+                    "description": "Полное сопровождение от консультации до полного восстановления"
+                }
+            ],
+            "bioText": [
+                "Доктор Ойбек Усманов — специалист в области хирургии и реконструктивно-эстетической медицины, практикующий в сфере восстановления волос. Образование включает бакалавриат по общей врачебной практике, магистратуру по хирургии, а также вторичную специализацию по пластической хирургии, полученную в Центре профессиональной квалификации медицинских работников.",
+                "С 2021 года занимается эстетической медициной, уделяя особое внимание методам восстановления волос. Постоянно повышает квалификацию и расширяет навыки, обучаясь у ведущих специалистов и участвуя в профессиональных медицинских программах.",
+                "В практике использует современные малоинвазивные методики пересадки волос, включая FUE, DHI, а также реконструкцию бороды и бровей. Уделяет большое внимание безопасности, естественности результата и индивидуальному подходу к каждому пациенту."
+            ]
+        },
+        "education": {
+            "title": "Образование и",
+            "titleHighlight": "сертификаты",
+            "subtitle": "Непрерывное профессиональное развитие и международное признание",
+            "achievementsTitle": "Профессиональные достижения",
+            "achievementsSubtitle": "Постоянное совершенствование навыков и участие в международных конференциях",
+            "achievementsItems": [
+                {
+                    "number": "50+",
+                    "label": "Международных конференций"
+                },
+                {
+                    "number": "3",
+                    "label": "Членства в ассоциациях"
+                },
+                {
+                    "number": "100+",
+                    "label": "Часов обучения ежегодно"
+                }
+            ],
+            "certificates": [
+                {
+                    "year": "2018",
+                    "title": "Ташкентская медицинская академия",
+                    "specialty": "Общая врачебная практика"
+                },
+                {
+                    "year": "2021",
+                    "title": "Ташкентская медицинская академия",
+                    "specialty": "Степень магистра по хирургии"
+                },
+                {
+                    "year": "2022",
+                    "title": "Центр повышения квалификации",
+                    "specialty": "Пластическая хирургия"
+                }
+            ]
+        },
+        "reviews": {
+            "title": "Отзывы",
+            "titleHighlight": "пациентов",
+            "subtitle": "Более 2000 довольных пациентов доверяют свое здоровье доктору Усманову",
+            "items": [
+                {
+                    "name": "Фарход Р.",
+                    "date": "Октябрь 2025",
+                    "text": "Невероятный результат! Доктор Усманов настоящий профессионал. Процедура прошла комфортно, результат превзошел все ожидания. Волосы выглядят абсолютно естественно."
+                },
+                {
+                    "name": "Азиз М.",
+                    "date": "Сентябрь 2025",
+                    "text": "Сделал пересадку методом FUE. Очень доволен! Никаких шрамов, быстрое восстановление. Доктор все подробно объяснил, весь процесс был под контролем. Рекомендую!"
+                },
+                {
+                    "name": "Шахзод К.",
+                    "date": "Август 2025",
+                    "text": "Долго выбирал клинику, остановился на докторе Усманове - не пожалел ни секунды. Современное оборудование, высокий профессионализм, индивидуальный подход. Результат потрясающий!"
+                }
+            ]
+        },
+        "cta": {
+            "title": "Готовы начать новую жизнь?",
+            "subtitle": "Запишитесь на бесплатную консультацию и узнайте, какой метод восстановления волос подходит именно вам",
+            "button": "Записаться на консультацию"
+        },
+        "contact": {
+            "title": "Свяжитесь",
+            "titleHighlight": "с нами",
+            "subtitle": "Запишитесь на бесплатную консультацию и получите профессиональные рекомендации",
+            "phone": "Телефон",
+            "email": "Email",
+            "address": "Адрес",
+            "addressText": "г. Ташкент, Юнусабадский район, махаллинский сход граждан Адолат, 4-й квартал, 4А"
+        },
+        "form": {
+            "title": "Запись на консультацию",
+            "name": "Ваше имя",
+            "namePlaceholder": "Введите имя",
+            "phone": "Телефон",
+            "phonePlaceholder": "+998 901234567",
+            "service": "Услуга",
+            "servicePlaceholder": "Выберите услугу",
+            "comment": "Комментарий",
+            "commentPlaceholder": "Расскажите о вашей ситуации",
+            "submit": "Отправить заявку",
+            "submitting": "Отправка...",
+            "success": "Заявка отправлена!",
+            "error": "Ошибка отправки",
+            "phoneError": "Введите 9 цифр номера после +998",
+            "serviceOptions": [
+                "Метод FUE",
+                "DHI метод",
+                "Трансплантация бороды",
+                "Пересадка бровей",
+                "PRP-терапия"
+            ]
+        },
+        "footer": {
+            "description": "Профессиональная пересадка волос с применением современных международных методик FUE и DHI",
+            "navigation": "Навигация",
+            "contacts": "Контакты",
+            "copyright": "© 2025 Доктор Ойбек Усманов. Все права защищены."
+        }
+    }
+}
