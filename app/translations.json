@@ -21,7 +21,7 @@
                     "subtitle": "Og'riqsiz jarayon va tez tiklanish"
                 },
                 {
-                    "title": "2000 dan ortiq muvaffaqiyatli operatsiya",
+                    "title": "800dan ortiq muvaffaqiyatli operatsiya",
                     "subtitle": "Xalqaro tajriba va sertifikatsiya"
                 }
             ],
@@ -41,7 +41,7 @@
                     "label": "Soatlik amaliyot"
                 },
                 {
-                    "number": "2000+",
+                    "number": "800+",
                     "label": "Muvaffaqiyatli operatsiyalar"
                 },
                 {
@@ -67,21 +67,21 @@
                     ]
                 },
                 {
-                    "title": "DHI usuli",
-                    "description": "Kanallar yaratmasdan to'g'ridan-to'g'ri soch implantatsiyasi. Maksimal zichlik va transplantlarni aniq joylashtiruvchi inqilobiy texnologiya.",
-                    "features": [
-                        "Yuqori zichlik",
-                        "Aniq implantatsiya",
-                        "Minimal shikastlanish",
-                        "Tez bitish"
-                    ]
-                },
-                {
                     "title": "Soqol transplantatsiyasi",
                     "description": "Har qanday shaklda qalin, tabiiy soqol yaratish. Yuz chiziqlarini hisobga olgan holda individual dizayn, maksimal tabiiylik uchun tabiiy o'sish burchagi.",
                     "features": [
                         "Tabiiy qalinlik",
                         "Har qanday shakl",
+                        "Individual dizayn",
+                        "Umrbod natija"
+                    ]
+                },
+                {
+                    "title": "Qosh ko‘chirib o‘tkazish",
+                    "description": "Har qanday shakldagi tabiiy va chiroyli qoshlarni yaratish. Yuz simmetriyasi va kerakli zichlikka moslab individual dizayn. Maksimal tabiiy ko‘rinish uchun soch o‘sish yo‘nalishi nozik ishlanadi.",
+                    "features": [
+                        "Tabiiy shakl",
+                        "To'g'ri simmetriya",
                         "Individual dizayn",
                         "Umrbod natija"
                     ]
@@ -101,12 +101,12 @@
         "about": {
             "title": "Doktor",
             "titleHighlight": "Oybek Usmanov",
-            "subtitle": "Xalqaro malakaga ega jarroh-trixolog",
-            "imageTitle": "Trixologiyada 8 yillik tajriba",
+            "subtitle": "Xalqaro malakaga ega jarroh",
+            "imageTitle": "Jarrohlikda 8 yillik tajriba",
             "imageSubtitle": "ISHRS va AAHRS xalqaro uyushmalari a'zosi",
             "educationTitle": "Ta'lim",
-            "educationText": "Toshkent tibbiyot akademiyasi bitiruvchisi. Shifokorlarni malakasini oshirish institutida dermatovenerologiya bo'yicha mutaxassislik.",
-            "statsNumber": "2000+",
+            "educationText": "Toshkent Tibbiyot Akademiyasi bitiruvchisi. Plastik jarrohlik yo‘nalishi bo‘yicha mutaxassislik, magistr darajasi.",
+            "statsNumber": "800+",
             "statsTitle": "Muvaffaqiyatli operatsiyalar",
             "statsText": "Har bir protsedura maksimal aniqlik va bemor haqida g'amxo'rlik bilan amalga oshiriladi",
             "advantagesTitle": "Doktor haqida",
@@ -175,7 +175,7 @@
         "reviews": {
             "title": "Bemorlar",
             "titleHighlight": "sharhlari",
-            "subtitle": "2000 dan ortiq mamnun bemorlar sog'liklarini doktor Usmanovga ishonib topshiradilar",
+            "subtitle": "800dan ortiq mamnun bemorlar sog'liklarini doktor Usmanovga ishonib topshiradilar",
             "items": [
                 {
                     "name": "Farxod R.",
@@ -225,7 +225,6 @@
             "phoneError": "+998 dan keyin 9 ta raqam kiriting",
             "serviceOptions": [
                 "FUE usuli",
-                "DHI usuli",
                 "Soqol transplantatsiyasi",
                 "Qosh ko'chirish",
                 "PRP-terapiya"
@@ -260,7 +259,7 @@
                     "subtitle": "Безболезненная процедура с быстрым восстановлением"
                 },
                 {
-                    "title": "Более 2000 успешных операций",
+                    "title": "Более 800успешных операций",
                     "subtitle": "Международный опыт и сертификация"
                 }
             ],
@@ -280,7 +279,7 @@
                     "label": "Часов практики"
                 },
                 {
-                    "number": "2000+",
+                    "number": "800+",
                     "label": "Успешных операций"
                 },
                 {
@@ -306,21 +305,21 @@
                     ]
                 },
                 {
-                    "title": "DHI метод",
-                    "description": "Прямая имплантация волос без предварительного создания каналов. Революционная технология, обеспечивающая максимальную плотность и точность размещения трансплантатов.",
-                    "features": [
-                        "Высокая плотность",
-                        "Точная имплантация",
-                        "Минимальная травма",
-                        "Быстрое заживление"
-                    ]
-                },
-                {
                     "title": "Трансплантация бороды",
                     "description": "Создание густой, естественной бороды любой формы. Индивидуальный дизайн с учетом черт лица, естественный угол роста волос для максимальной натуральности.",
                     "features": [
                         "Естественная густота",
                         "Любая форма",
+                        "Индивидуальный дизайн",
+                        "Пожизненный результат"
+                    ]
+                },
+                {
+                    "title": "Пересадка бровей",
+                    "description": "Создание аккуратных, естественно очерченных бровей любой формы. Индивидуальный дизайн с учётом симметрии лица и желаемой густоты. Тонкая работа с направлением роста волос для максимально натурального результата.",
+                    "features": [
+                        "Естественная форма",
+                        "Правильная симметрия",
                         "Индивидуальный дизайн",
                         "Пожизненный результат"
                     ]
@@ -341,11 +340,11 @@
             "title": "Доктор",
             "titleHighlight": "Ойбек Усманов",
             "subtitle": "Хирург-трихолог с международной квалификацией",
-            "imageTitle": "8 лет опыта в трихологии",
+            "imageTitle": "8 лет опыта в хирургии",
             "imageSubtitle": "Член международных ассоциаций ISHRS и AAHRS",
             "educationTitle": "Образование",
-            "educationText": "Выпускник Ташкентской Медицинской Академии. Специализация по дерматовенерологии в Институте Усовершенствования Врачей.",
-            "statsNumber": "2000+",
+            "educationText": "Выпускник Ташкентской Медицинской Академии. Специализация по пластической хирургии, степень магистра",
+            "statsNumber": "800+",
             "statsTitle": "Успешных операций",
             "statsText": "Каждая процедура выполняется с максимальной точностью и заботой о пациенте",
             "advantagesTitle": "О докторе",
@@ -414,7 +413,7 @@
         "reviews": {
             "title": "Отзывы",
             "titleHighlight": "пациентов",
-            "subtitle": "Более 2000 довольных пациентов доверяют свое здоровье доктору Усманову",
+            "subtitle": "Более 800довольных пациентов доверяют свое здоровье доктору Усманову",
             "items": [
                 {
                     "name": "Фарход Р.",
@@ -464,7 +463,6 @@
             "phoneError": "Введите 9 цифр номера после +998",
             "serviceOptions": [
                 "Метод FUE",
-                "DHI метод",
                 "Трансплантация бороды",
                 "Пересадка бровей",
                 "PRP-терапия"

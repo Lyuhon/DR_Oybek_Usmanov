@@ -73,7 +73,7 @@ export default function ContactForm({ t }) {
     };
 
     return (
-        <div className="bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 rounded-3xl shadow-xl">
+        <div id="contact" className="bg-gradient-to-br from-gray-50 to-white p-8 md:p-10 rounded-3xl shadow-xl">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">{t.form.title}</h3>
 
             {formMessage && (

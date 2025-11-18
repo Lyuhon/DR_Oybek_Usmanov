@@ -1,3 +1,4 @@
+// HairTransplantLanding.jsx
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
@@ -20,8 +21,9 @@ const heroImages = [
 
 const serviceImages = [
     '/FUE-method.jpg',
-    '/DHI-method.jpg',
+    // '/DHI-method.jpg',
     'https://img.freepik.com/free-photo/half-man-s-face-with-beard_171337-17203.jpg',
+    '/eye-brow.jpeg',
     'https://img.freepik.com/free-photo/adult-male-doing-follicular-unit-extraction_23-2149106334.jpg'
 ];
 
@@ -410,11 +412,40 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-6 mb-12">
-                        <div className="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden shadow-2xl group bg-gray-200 min-h-[400px]">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                            <div className="absolute bottom-8 left-8 right-8">
-                                <h3 className="text-3xl font-bold text-white mb-3">{t.about.imageTitle}</h3>
-                                <p className="text-gray-200 text-lg">{t.about.imageSubtitle}</p>
+                        <div className="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden shadow-2xl group bg-gray-200 min-h-[500px]">
+                            {/* Изображение для мобильных (< md) */}
+                            <Image
+                                src="/about-doctor-mobile.jpg"
+                                alt={t.about.imageTitle}
+                                fill
+                                className="object-cover md:hidden"
+                                priority
+                                sizes="100vw"
+                                quality={85}
+                            />
+
+                            {/* Изображение для десктопа (≥ md) */}
+                            <Image
+                                src="/about-doctor-pc.jpg"
+                                alt={t.about.imageTitle}
+                                fill
+                                className="object-cover hidden md:block"
+                                priority
+                                sizes="(min-width: 768px) 66vw, 100vw"
+                                quality={90}
+                            />
+
+                            {/* Градиентная подложка */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none"></div>
+
+                            {/* Текст поверх изображения */}
+                            <div className="absolute bottom-8 left-8 right-8 z-10">
+                                <h3 className="text-3xl font-bold text-white mb-3 drop-shadow-lg">
+                                    {t.about.imageTitle}
+                                </h3>
+                                <p className="text-gray-200 text-lg drop-shadow-md">
+                                    {t.about.imageSubtitle}
+                                </p>
                             </div>
                         </div>
 
@@ -613,7 +644,7 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="py-20 bg-white">
+            <section id="contact-" className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="grid md:grid-cols-2 gap-12">
                         <div>
@@ -623,33 +654,53 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                             <p className="text-xl text-gray-600 mb-8">{t.contact.subtitle}</p>
 
                             <div className="space-y-6 mb-8">
+                                {/* Телефон */}
                                 <div className="flex items-start space-x-4">
                                     <div className="w-14 h-14 bg-gradient-to-br from-[#f3852e] to-[#c96641] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                                         <Phone className="text-white" size={24} />
                                     </div>
                                     <div>
                                         <div className="font-semibold text-gray-900 mb-1 text-lg">{t.contact.phone}</div>
-                                        <div className="text-gray-600 text-lg">+998 97 421 11 12</div>
+                                        <a
+                                            href="tel:+998974211112"
+                                            className="text-gray-600 text-lg hover:text-[#f3852e] transition-colors underline-offset-4 hover:underline"
+                                        >
+                                            +998 97 421 11 12
+                                        </a>
                                     </div>
                                 </div>
 
+                                {/* Email */}
                                 <div className="flex items-start space-x-4">
                                     <div className="w-14 h-14 bg-gradient-to-br from-[#f3852e] to-[#c96641] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                                         <Mail className="text-white" size={24} />
                                     </div>
                                     <div>
                                         <div className="font-semibold text-gray-900 mb-1 text-lg">{t.contact.email}</div>
-                                        <div className="text-gray-600 text-lg">info@oybekusmanov.uz</div>
+                                        <a
+                                            href="mailto:info@oybekusmanov.uz"
+                                            className="text-gray-600 text-lg hover:text-[#f3852e] transition-colors underline-offset-4 hover:underline break-all"
+                                        >
+                                            info@oybekusmanov.uz
+                                        </a>
                                     </div>
                                 </div>
 
+                                {/* Адрес (открытие в Google Maps) */}
                                 <div className="flex items-start space-x-4">
                                     <div className="w-14 h-14 bg-gradient-to-br from-[#f3852e] to-[#c96641] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                                         <MapPin className="text-white" size={24} />
                                     </div>
                                     <div>
                                         <div className="font-semibold text-gray-900 mb-1 text-lg">{t.contact.address}</div>
-                                        <div className="text-gray-600 text-lg">{t.contact.addressText}</div>
+                                        <a
+                                            href="https://yandex.uz/maps/-/CLG37W8Z"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-gray-600 text-lg hover:text-[#f3852e] transition-colors underline-offset-4 hover:underline"
+                                        >
+                                            {t.contact.addressText}
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -683,10 +734,27 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
 
                         <div>
                             <h4 className="font-bold text-xl mb-4">{t.footer.contacts}</h4>
-                            <ul className="space-y-2 text-gray-400">
-                                <li>+998 97 421 11 12</li>
-                                <li>info@oybekusmanov.uz</li>
-                                <li>{t.contact.addressText}</li>
+                            <ul className="space-y-3 text-gray-400">
+                                <li>
+                                    <a href="tel:+998974211112" className="hover:text-[#f3852e] transition-colors">
+                                        +998 97 421 11 12
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:info@oybekusmanov.uz" className="hover:text-[#f3852e] transition-colors break-all">
+                                        info@oybekusmanov.uz
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://yandex.uz/maps/-/CLG37W8Z"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:text-[#f3852e] transition-colors"
+                                    >
+                                        {t.contact.addressText}
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
