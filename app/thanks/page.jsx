@@ -1,4 +1,4 @@
-// app/uz/thanks/page.jsx
+// app/thanks/page.jsx
 
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
