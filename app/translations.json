@@ -10,22 +10,23 @@
             "languageCode": "RU"
         },
         "hero": {
-            "badge": "ISHRS • AAHRS • Trixologlar uyushmasi a'zosi",
+            "badge": "ISHRS • AAHRS • Trixolog",
             "slides": [
                 {
-                    "title": "Ishonchingizni tiklang",
-                    "subtitle": "FUE usuli bilan tabiiy natijalar"
+                    "title": "Kepkani yechding — stressdan qutulding",
+                    "subtitle": "Kepka ostida yashirinmang. Muammoni yashirmang — uni hal qilib, xotirjamlikka qayting."
                 },
                 {
-                    "title": "Zamonaviy texnologiyalar",
-                    "subtitle": "Og'riqsiz jarayon va tez tiklanish"
+                    "title": "O‘ziga ishonch soch bilan qaytadi",
+                    "subtitle": "Ishonchni qaytaring. Barchasi sochdan boshlanadi. Kam soch — hukm emas. Xohlaganingizdek ko‘rinishingiz mumkin."
                 },
                 {
-                    "title": "800dan ortiq muvaffaqiyatli operatsiya",
-                    "subtitle": "Xalqaro tajriba va sertifikatsiya"
+                    "title": "To‘yda kepkali kuyov — to‘g‘ri emas",
+                    "subtitle": "Ishonch kepkaga bog‘liq bo‘lmasligi kerak. Muhim paytlarda yashirinmaslik uchun bugunoq qadam qo‘ying."
                 }
             ],
-            "cta": "Konsultatsiyaga yozilish"
+            "cta": "So'rov yuborish",
+            "sale": "10% chegirma bilan"
         },
         "stats": {
             "title": "Professionalga",
@@ -251,19 +252,20 @@
             "badge": "Член ISHRS • AAHRS • Союз трихологов",
             "slides": [
                 {
-                    "title": "Восстановите свою уверенность",
-                    "subtitle": "Естественные результаты с методом FUE"
+                    "title": "Снял кепку — избавился от стресса",
+                    "subtitle": "Хватит прятаться под кепкой. Верни себе спокойствие — реши проблему, а не скрывай её."
                 },
                 {
-                    "title": "Современные технологии",
-                    "subtitle": "Безболезненная процедура с быстрым восстановлением"
+                    "title": "Уверенность возвращается вместе с волосами",
+                    "subtitle": "Верни уверенность. Начни с волос. Редкие волосы — не приговор. Ты можешь выглядеть так, как хочешь."
                 },
                 {
-                    "title": "Более 800успешных операций",
-                    "subtitle": "Международный опыт и сертификация"
+                    "title": "Муж на свадьбе в кепке — не вариант",
+                    "subtitle": "Уверенность не должна зависеть от кепки. Сделай шаг сейчас — чтобы в важные моменты не прятаться."
                 }
             ],
-            "cta": "Записаться на консультацию"
+            "cta": "Оставить заявку",
+            "sale": "10% скидка"
         },
         "stats": {
             "title": "Доверьтесь",

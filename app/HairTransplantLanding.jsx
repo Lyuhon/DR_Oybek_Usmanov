@@ -12,19 +12,31 @@ const ContactForm = dynamic(() => import('./ContactForm'), {
     ssr: false
 });
 
-// Изображения героя
+// Изображения слайдера
 const heroImages = [
-    { src: '/cap-banner.jpg', priority: true },
-    { src: '/pills-yellow-bg.jpg', priority: false },
-    { src: '/man-with-beard.avif', priority: false }
+    {
+        mobile: '/cap-hair-MOBILE.png',
+        desktop: '/cap-banner.jpg', // добавьте PC версию
+        priority: true
+    },
+    {
+        mobile: '/man-with-hairbrush-MOBILE.png',
+        desktop: '/man-with-hairbrush-PC.png',
+        priority: false
+    },
+    {
+        mobile: '/mariedge-couple-MOBILE.png',
+        desktop: '/mariedge-couple.png', // добавьте PC версию
+        priority: false
+    }
 ];
 
 const serviceImages = [
     '/FUE-method.jpg',
     // '/DHI-method.jpg',
-    'https://img.freepik.com/free-photo/half-man-s-face-with-beard_171337-17203.jpg',
+    '/half-man-s-face-with-beard.avif',
     '/eye-brow.jpeg',
-    'https://img.freepik.com/free-photo/adult-male-doing-follicular-unit-extraction_23-2149106334.jpg'
+    '/adult-male-doing-follicular-unit-extraction.avif'
 ];
 
 const certificateImages = [
@@ -190,33 +202,47 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
 
             {/* Hero Section */}
             <section className="relative pt-20 overflow-hidden">
+
                 <div className="absolute inset-0 z-0">
                     {heroImages.map((img, index) => (
                         <div
                             key={index}
                             className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
                         >
+                            {/* Изображение для мобилки */}
                             <Image
-                                src={img.src}
+                                src={img.mobile}
                                 alt={t.hero.slides[index]?.title || ''}
                                 fill
-                                className="object-cover"
+                                className="object-cover object-bottom md:hidden"
                                 priority={img.priority}
                                 quality={85}
                                 sizes="100vw"
                             />
+
+                            {/* Изображение для десктопа */}
+                            <Image
+                                src={img.desktop}
+                                alt={t.hero.slides[index]?.title || ''}
+                                fill
+                                className="object-cover hidden md:block"
+                                priority={img.priority}
+                                quality={85}
+                                sizes="100vw"
+                            />
+
                             <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/30 to-black/30"></div>
                         </div>
                     ))}
                 </div>
 
-                <div className="max-w-7xl mx-auto px-4 relative z-10 py-12 md:py-32 min-h-[420px] md:min-h-[700px] flex items-center">
+                <div className="max-w-7xl mx-auto px-4 relative z-10 py-12 md:pb-32 pb-0 md:py-32 min-h-[80vh] md:min-h-[700px] flex items-center">
                     <div className="max-w-3xl w-full">
                         <div className="inline-block bg-gradient-to-r from-[#f3852e] to-[#c96641] text-white px-6 py-2 rounded-full text-sm font-semibold mb-6 relative z-20">
                             {t.hero.badge}
                         </div>
 
-                        <div className="relative min-h-[200px] md:min-h-[320px] mb-8">
+                        <div className="relative min-h-[360px] md:min-h-[320px] mb-8">
                             {t.hero.slides.map((slide, index) => (
                                 <div
                                     key={index}
@@ -227,7 +253,7 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                                             : 'opacity-0 translate-x-12 pointer-events-none'
                                         }`}
                                 >
-                                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight">
+                                    <h1 className="text-3xl md:text-6xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
                                         {slide.title}
                                     </h1>
                                     <p className="text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed">
@@ -237,18 +263,50 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                             ))}
                         </div>
 
-                        <div className="flex flex-col sm:flex-row gap-4 mb-8 relative z-20">
-                            <a
-                                href="#contact"
-                                onClick={(e) => smoothScroll(e, 'contact')}
-                                className="bg-gradient-to-r from-[#f3852e] to-[#c96641] hover:from-[#c96641] hover:to-[#f3852e] text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-lg transition-all transform hover:scale-105 shadow-2xl flex items-center justify-center space-x-2"
+                        <div className="md:hidden flex items-center space-x-4 relative z-20 mb-4">
+                            <button
+                                onClick={() => setCurrentSlide((prev) => (prev - 1 + t.hero.slides.length) % t.hero.slides.length)}
+                                className="border-1 border-white w-12 h-12 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full flex items-center justify-center transition-all"
+                                aria-label="Previous slide"
                             >
-                                <span>{t.hero.cta}</span>
-                                <ArrowRight size={22} />
-                            </a>
+                                <ChevronLeft className="text-white" size={24} />
+                            </button>
+                            <div className="flex space-x-2">
+                                {t.hero.slides.map((_, index) => (
+                                    <button
+                                        key={index}
+                                        onClick={() => setCurrentSlide(index)}
+                                        className={`transition-all ${index === currentSlide ? 'w-12 bg-white' : 'w-3 bg-white/50'} h-3 rounded-full`}
+                                        aria-label={`Go to slide ${index + 1}`}
+                                    ></button>
+                                ))}
+                            </div>
+                            <button
+                                onClick={() => setCurrentSlide((prev) => (prev + 1) % t.hero.slides.length)}
+                                className="border-1 border-white w-12 h-12 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full flex items-center justify-center transition-all"
+                                aria-label="Next slide"
+                            >
+                                <ChevronRight className="text-white" size={24} />
+                            </button>
                         </div>
 
-                        <div className="flex items-center space-x-4 relative z-20">
+                        <div className="flex flex-col sm:flex-row gap-4 mb-8 relative z-20">
+                            <div className="relative inline-block">
+
+                                <a href="#contact"
+                                    onClick={(e) => smoothScroll(e, 'contact')}
+                                    className="bg-gradient-to-r from-[#f3852e] to-[#c96641] hover:from-[#c96641] hover:to-[#f3852e] text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-lg transition-all transform hover:scale-105 shadow-2xl flex items-center justify-center space-x-2"
+                                >
+                                    <span>{t.hero.cta}</span>
+                                    <ArrowRight size={22} />
+                                </a>
+                                <div className="absolute -top-3 -right-2 bg-red-600 text-white text-xs md:text-sm font-bold px-3 py-1 rounded-full shadow-lg border-1 border-white">
+                                    {t.hero.sale}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="md:flex hidden items-center space-x-4 relative z-20">
                             <button
                                 onClick={() => setCurrentSlide((prev) => (prev - 1 + t.hero.slides.length) % t.hero.slides.length)}
                                 className="w-12 h-12 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full flex items-center justify-center transition-all"
@@ -276,10 +334,10 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Stats Section */}
-            <section className="py-20 bg-white">
+            < section className="py-20 bg-white" >
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -307,10 +365,10 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                         })}
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Services Section */}
-            <section id="services" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+            < section id="services" className="py-20 bg-gradient-to-br from-gray-50 to-white" >
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-16">
                         <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
@@ -411,10 +469,10 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* About Section */}
-            <section id="about" className="py-20 bg-white">
+            < section id="about" className="py-20 bg-white" >
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-16">
                         <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
@@ -503,10 +561,10 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Education Section */}
-            <section id="education" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+            < section id="education" className="py-20 bg-gradient-to-br from-gray-50 to-white" >
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-16">
                         <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
@@ -566,42 +624,44 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Certificate Modal */}
-            {certificateModal && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/30 backdrop-blur-sm">
-                    <div className="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl">
-                        <button
-                            onClick={() => setCertificateModal(null)}
-                            className="absolute top-4 right-4 z-10 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors"
-                        >
-                            <X size={24} className="text-gray-900" />
-                        </button>
-                        <div className="p-6">
-                            <div className="relative w-full h-[60vh]">
-                                <Image
-                                    src={certificateImages[t.education.certificates.indexOf(certificateModal)]}
-                                    alt={certificateModal.title}
-                                    fill
-                                    className="object-contain rounded-2xl"
-                                    sizes="(max-width: 1024px) 100vw, 1024px"
-                                />
-                            </div>
-                            <div className="mt-6">
-                                <div className="inline-block bg-gradient-to-r from-[#f3852e] to-[#c96641] text-white px-4 py-2 rounded-full font-bold mb-3">
-                                    {certificateModal.year}
+            {
+                certificateModal && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/30 backdrop-blur-sm">
+                        <div className="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl">
+                            <button
+                                onClick={() => setCertificateModal(null)}
+                                className="absolute top-4 right-4 z-10 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors"
+                            >
+                                <X size={24} className="text-gray-900" />
+                            </button>
+                            <div className="p-6">
+                                <div className="relative w-full h-[60vh]">
+                                    <Image
+                                        src={certificateImages[t.education.certificates.indexOf(certificateModal)]}
+                                        alt={certificateModal.title}
+                                        fill
+                                        className="object-contain rounded-2xl"
+                                        sizes="(max-width: 1024px) 100vw, 1024px"
+                                    />
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{certificateModal.title}</h3>
-                                <p className="text-gray-600 flex items-center">
-                                    <CheckCircle className="text-[#f3852e] mr-2" size={20} />
-                                    {certificateModal.specialty}
-                                </p>
+                                <div className="mt-6">
+                                    <div className="inline-block bg-gradient-to-r from-[#f3852e] to-[#c96641] text-white px-4 py-2 rounded-full font-bold mb-3">
+                                        {certificateModal.year}
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{certificateModal.title}</h3>
+                                    <p className="text-gray-600 flex items-center">
+                                        <CheckCircle className="text-[#f3852e] mr-2" size={20} />
+                                        {certificateModal.specialty}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            )}
+                )
+            }
 
             {/* Reviews Section */}
             <section id="reviews" className="py-20 bg-white">
@@ -776,6 +836,6 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                     </div>
                 </div>
             </footer>
-        </div>
+        </div >
     );
 }
