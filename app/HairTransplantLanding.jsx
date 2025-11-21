@@ -718,7 +718,7 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                             </div>
                         </div>
 
-                        <ContactForm t={t} />
+                        <ContactForm t={t} lang={lang} />
                     </div>
                 </div>
             </section>
