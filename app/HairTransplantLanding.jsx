@@ -14,7 +14,7 @@ const ContactForm = dynamic(() => import('./ContactForm'), {
 
 // Изображения героя
 const heroImages = [
-    { src: '/happy-beard-man.jpg', priority: true },
+    { src: '/cap-banner.jpg', priority: true },
     { src: '/pills-yellow-bg.jpg', priority: false },
     { src: '/man-with-beard.avif', priority: false }
 ];
@@ -106,6 +106,26 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                         <Image src="/oybek-logo.png" alt="Dr. Usmanov" width={40} height={40} className="h-10 w-auto" priority />
                     </div>
 
+                    <div className='flex items-center gap-4'>
+                        <button
+                            onClick={toggleLanguage}
+                            className="md:hidden cursor-pointer flex items-center space-x-2 px-4 py-3 rounded-full bg-white shadow-md transition-all"
+                            title={t.nav.languageName}
+                        >
+                            <FlagIcon isRu={lang === 'uz'} />
+                            <span className="text-sm font-[600] text-gray-700">{t.nav.languageCode}</span>
+                        </button>
+
+                        {/* Mobile Menu Button */}
+                        <button
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            className="md:hidden text-gray-900 p-2 bg-white rounded-full shadow-md"
+                            aria-label="Toggle menu"
+                        >
+                            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                        </button>
+                    </div>
+
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-8">
                         <a href="#services" onClick={(e) => smoothScroll(e, 'services')} className="text-gray-700 hover:text-[#f3852e] transition-colors font-medium">{t.nav.services}</a>
@@ -127,14 +147,6 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                         </a>
                     </div>
 
-                    {/* Mobile Menu Button */}
-                    <button
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="md:hidden text-gray-900 p-2 bg-white rounded-full shadow-md"
-                        aria-label="Toggle menu"
-                    >
-                        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
                 </div>
             </nav>
 
