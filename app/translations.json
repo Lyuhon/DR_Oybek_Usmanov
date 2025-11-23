@@ -1,5 +1,21 @@
 {
     "uz": {
+        "beforeAfter": {
+            "title": "Natijalarimiz",
+            "titleHighlight": "Gacha va Keyin",
+            "subtitle": "Haqiqiy bemorlarimizning natijalari - professional soch ko'chatish jarayonining kuchi",
+            "before": "Gacha",
+            "after": "Keyin"
+        },
+        "videoReviews": {
+            "title": "Video",
+            "titleHighlight": "Sharhlar",
+            "subtitle": "Bemorlarimizning jonli sharhlari - ularning tajribasi va natijalari haqida",
+            "playLabel": "Ijro etish",
+            "pauseLabel": "Pauza",
+            "playingText": "Ijro etilmoqda...",
+            "clickToWatch": "Video sharhni ko‘rish uchun bosing"
+        },
         "nav": {
             "services": "Xizmatlar",
             "about": "Doktor haqida",
@@ -239,6 +255,22 @@
         }
     },
     "ru": {
+        "beforeAfter": {
+            "title": "Наши результаты",
+            "titleHighlight": "До и После",
+            "subtitle": "Реальные результаты наших пациентов - сила профессиональной трансплантации волос",
+            "before": "До",
+            "after": "После"
+        },
+        "videoReviews": {
+            "title": "Видео",
+            "titleHighlight": "Отзывы",
+            "subtitle": "Живые отзывы наших пациентов - их опыт и результаты",
+            "playLabel": "Воспроизвести",
+            "pauseLabel": "Пауза",
+            "playingText": "Воспроизведение...",
+            "clickToWatch": "Нажмите для просмотра видеоотзыва"
+        },
         "nav": {
             "services": "Услуги",
             "about": "О докторе",
