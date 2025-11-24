@@ -300,12 +300,12 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
 
                                 <a href="#contact"
                                     onClick={(e) => smoothScroll(e, 'contact')}
-                                    className="bg-gradient-to-r from-[#f3852e] to-[#c96641] hover:from-[#c96641] hover:to-[#f3852e] text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-lg transition-all transform hover:scale-105 shadow-2xl flex items-center justify-center space-x-2"
+                                    className="md:bg-gradient-to-r md:from-[#f3852e] md:to-[#c96641] md:hover:from-[#c96641] md:hover:to-[#f3852e] md:text-white bg-gradient-to-r from-[#fff] to-[#fff] px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-lg transition-all transform hover:scale-105 shadow-2xl flex items-center justify-center space-x-2 border-1 border-white"
                                 >
                                     <span>{t.hero.cta}</span>
                                     <ArrowRight size={22} />
                                 </a>
-                                <div className="absolute -top-3 -right-2 bg-red-600 text-white text-xs md:text-sm font-bold px-3 py-1 rounded-full shadow-lg border-1 border-white">
+                                <div className="absolute -top-3 -right-2 bg-red-600- bg-[#e25d5d] text-white text-xs md:text-sm font-bold px-3 py-1 rounded-full shadow-lg border-1 border-white">
                                     {t.hero.sale}
                                 </div>
                             </div>
@@ -340,6 +340,23 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                     </div>
                 </div>
             </section >
+
+            <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="bg-gradient-to-br from-[#f3852e] via-[#c96641] to-[#b85532] rounded-3xl p-16 text-center shadow-2xl relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32"></div>
+                        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full -ml-48 -mb-48"></div>
+                        <div className="relative z-10">
+                            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">{t.cta.title}</h2>
+                            <p className="text-lg md:text-xl text-white/90 mb-10 max-w-3xl mx-auto">{t.cta.subtitle}</p>
+                            <a href="#contact" onClick={(e) => smoothScroll(e, 'contact')} className="inline-flex items-center space-x-3 bg-white text-[#f3852e] px-8 md:px-12 py-4 md:py-5 rounded-full font-bold text-lg md:text-xl transition-all transform hover:scale-105 shadow-2xl hover:shadow-3xl">
+                                <span>{t.cta.button}</span>
+                                <ArrowRight size={26} />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* Stats Section */}
             < section className="py-20 bg-white" >
@@ -707,7 +724,7 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
             <BeforeAfter t={t} />
 
             {/* CTA Section */}
-            <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+            {/* <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="bg-gradient-to-br from-[#f3852e] via-[#c96641] to-[#b85532] rounded-3xl p-16 text-center shadow-2xl relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32"></div>
@@ -722,7 +739,7 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Contact Section */}
             <section id="contact-" className="py-20 bg-white">

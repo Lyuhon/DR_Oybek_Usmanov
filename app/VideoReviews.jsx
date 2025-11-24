@@ -38,9 +38,14 @@ const videoReviews = [
         video: '/video/UM-5.mp4',
         rating: 5,
     },
+    {
+        image: '/video/UM-6-min.jpg',
+        video: '/video/UM-6.mp4',
+        rating: 5,
+    },
 ];
 
-function VideoReviewCard({ review, t }) {
+function VideoReviewCard({ review, t, className = '' }) {
     const [isPlaying, setIsPlaying] = useState(false);
     const videoRef = useRef(null);
 
@@ -61,7 +66,9 @@ function VideoReviewCard({ review, t }) {
     };
 
     return (
-        <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+        // <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+        <div className={`bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 ${className}`}>
+
             {/* Большое фото сверху */}
             <div className="relative h-[70vh] lg:h-[500px] bg-gray-100">
                 <Image
@@ -149,12 +156,24 @@ export default function VideoReviews({ t }) {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {videoReviews.map((review, index) => (
                         <VideoReviewCard
                             key={index}
                             review={review}           // ← передаём объект с данными
                             t={t.videoReviews}        // ← переводы
+                        />
+                    ))}
+
+                </div> */}
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {videoReviews.map((review, index) => (
+                        <VideoReviewCard
+                            key={index}
+                            review={review}
+                            t={t.videoReviews}
+                            className={index === 6 ? 'md:hidden' : ''}  // ← вот тут прячем 7-й
                         />
                     ))}
                 </div>
