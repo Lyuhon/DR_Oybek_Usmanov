@@ -1,5 +1,5 @@
 // app/page.js
-import HairTransplantLanding from './HairTransplantLanding';
+import HairTransplantLanding from './HairTransplantLandingNew';
 import translations from './translations.json'; // ← ДОБАВЬ ЭТО
 
 export default function HomePage() {

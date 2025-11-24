@@ -2,9 +2,9 @@
     "uz": {
         "beforeAfter": {
             "title": "Natijalarimiz",
-            "titleHighlight": "Gacha va Keyin",
+            "titleHighlight": "Oldin va Keyin",
             "subtitle": "Haqiqiy bemorlarimizning natijalari - professional soch ko'chatish jarayonining kuchi",
-            "before": "Gacha",
+            "before": "Oldin",
             "after": "Keyin"
         },
         "videoReviews": {
@@ -21,7 +21,7 @@
             "about": "Doktor haqida",
             "education": "Ta'lim",
             "reviews": "Sharhlar",
-            "consultation": "Konsultatsiya",
+            "consultation": "Bepul konsultatsiyaga yozilish",
             "languageName": "RU",
             "languageCode": "RU"
         },
@@ -41,7 +41,7 @@
                     "subtitle": "Ishonch kepkaga bog‘liq bo‘lmasligi kerak. Muhim paytlarda yashirinmaslik uchun bugunoq qadam qo‘ying."
                 }
             ],
-            "cta": "So'rov yuborish",
+            "cta": "Bepul konsultatsiyaga yozilish",
             "sale": "10% chegirma bilan"
         },
         "stats": {
@@ -214,7 +214,7 @@
         "cta": {
             "title": "Yangi hayotni boshlashga tayyormisiz?",
             "subtitle": "Bepul konsultatsiyaga yozilib, aynan sizga qaysi sochni tiklash usuli mos kelishini bilib oling",
-            "button": "Konsultatsiyaga yozilish"
+            "button": "Bepul konsultatsiyaga yozilish"
         },
         "contact": {
             "title": "Biz bilan",
@@ -276,7 +276,7 @@
             "about": "О докторе",
             "education": "Образование",
             "reviews": "Отзывы",
-            "consultation": "Консультация",
+            "consultation": "Бесплатная консультация",
             "languageName": "UZB",
             "languageCode": "UZB"
         },
@@ -296,7 +296,7 @@
                     "subtitle": "Уверенность не должна зависеть от кепки. Сделай шаг сейчас — чтобы в важные моменты не прятаться."
                 }
             ],
-            "cta": "Оставить заявку",
+            "cta": "Бесплатная консультация",
             "sale": "10% скидка"
         },
         "stats": {
@@ -469,7 +469,7 @@
         "cta": {
             "title": "Готовы начать новую жизнь?",
             "subtitle": "Запишитесь на бесплатную консультацию и узнайте, какой метод восстановления волос подходит именно вам",
-            "button": "Записаться на консультацию"
+            "button": "Записаться на бесплатную консультацию"
         },
         "contact": {
             "title": "Свяжитесь",

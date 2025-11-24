@@ -305,9 +305,9 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                                     <span>{t.hero.cta}</span>
                                     <ArrowRight size={22} />
                                 </a>
-                                <div className="absolute -top-3 -right-2 bg-red-600- bg-[#e25d5d] text-white text-xs md:text-sm font-bold px-3 py-1 rounded-full shadow-lg border-1 border-white">
+                                {/* <div className="absolute -top-3 -right-2 bg-red-600- bg-[#e25d5d] text-white text-xs md:text-sm font-bold px-3 py-1 rounded-full shadow-lg border-1 border-white">
                                     {t.hero.sale}
-                                </div>
+                                </div> */}
                             </div>
                         </div>
 
@@ -341,9 +341,10 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                 </div>
             </section >
 
+            {/* CTA Section */}
             <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="bg-gradient-to-br from-[#f3852e] via-[#c96641] to-[#b85532] rounded-3xl p-16 text-center shadow-2xl relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-[#f3852e] via-[#c96641] to-[#b85532] rounded-3xl md:p-16 p-8 text-center shadow-2xl relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32"></div>
                         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full -ml-48 -mb-48"></div>
                         <div className="relative z-10">
@@ -357,6 +358,12 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                     </div>
                 </div>
             </section>
+
+
+            <VideoReviews t={t} />
+
+            <BeforeAfter t={t} />
+
 
             {/* Stats Section */}
             < section className="py-20 bg-white" >
@@ -718,10 +725,6 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                     </div>
                 </div>
             </section> */}
-
-            <VideoReviews t={t} />
-
-            <BeforeAfter t={t} />
 
             {/* CTA Section */}
             {/* <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
