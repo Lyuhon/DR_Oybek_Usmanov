@@ -313,7 +313,8 @@ function VideoReviewCard({ review, t, className = '' }) {
                             src={review.video}
                             className="w-full h-full object-cover"
                             playsInline
-                            preload="metadata"
+                            // preload="metadata"
+                            preload="none"
                             onEnded={handleVideoEnded}
                             onClick={togglePlayPause}
                         />
