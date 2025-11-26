@@ -144,11 +144,12 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                     </div>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center space-x-8">
+                    <div className="hidden md:flex items-center space-x-8 text-sm">
+                        <a href="#reviews" onClick={(e) => smoothScroll(e, 'reviews')} className="text-gray-700 hover:text-[#f3852e] transition-colors font-medium">{t.nav.reviews}</a>
+                        <a href="#before_after" onClick={(e) => smoothScroll(e, 'before_after')} className="text-gray-700 hover:text-[#f3852e] transition-colors font-medium">{t.nav.before_after}</a>
                         <a href="#services" onClick={(e) => smoothScroll(e, 'services')} className="text-gray-700 hover:text-[#f3852e] transition-colors font-medium">{t.nav.services}</a>
                         <a href="#about" onClick={(e) => smoothScroll(e, 'about')} className="text-gray-700 hover:text-[#f3852e] transition-colors font-medium">{t.nav.about}</a>
                         <a href="#education" onClick={(e) => smoothScroll(e, 'education')} className="text-gray-700 hover:text-[#f3852e] transition-colors font-medium">{t.nav.education}</a>
-                        <a href="#reviews" onClick={(e) => smoothScroll(e, 'reviews')} className="text-gray-700 hover:text-[#f3852e] transition-colors font-medium">{t.nav.reviews}</a>
 
                         <button
                             onClick={toggleLanguage}
@@ -181,6 +182,9 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
 
                         <div className="flex-1 overflow-y-auto py-6">
                             <div className="space-y-2 px-4">
+
+                                <a href="#reviews" onClick={(e) => smoothScroll(e, 'reviews')} className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#f3852e]/10 hover:to-[#c96641]/10 hover:text-[#f3852e] rounded-xl font-medium transition-all">{t.nav.reviews}</a>
+                                <a href="#before_after" onClick={(e) => smoothScroll(e, 'before_after')} className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#f3852e]/10 hover:to-[#c96641]/10 hover:text-[#f3852e] rounded-xl font-medium transition-all">{t.nav.before_after}</a>
                                 <a href="#services" onClick={(e) => smoothScroll(e, 'services')} className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#f3852e]/10 hover:to-[#c96641]/10 hover:text-[#f3852e] rounded-xl font-medium transition-all">{t.nav.services}</a>
                                 <a href="#about" onClick={(e) => smoothScroll(e, 'about')} className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#f3852e]/10 hover:to-[#c96641]/10 hover:text-[#f3852e] rounded-xl font-medium transition-all">{t.nav.about}</a>
                                 <a href="#education" onClick={(e) => smoothScroll(e, 'education')} className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#f3852e]/10 hover:to-[#c96641]/10 hover:text-[#f3852e] rounded-xl font-medium transition-all">{t.nav.education}</a>

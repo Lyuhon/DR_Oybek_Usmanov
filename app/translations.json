@@ -8,8 +8,8 @@
             "after": "Keyin"
         },
         "videoReviews": {
-            "title": "Video",
-            "titleHighlight": "Sharhlar",
+            "title": "Bemorlarimiz",
+            "titleHighlight": "fikrlari",
             "subtitle": "Bemorlarimizning jonli sharhlari - ularning tajribasi va natijalari haqida",
             "playLabel": "Ijro etish",
             "pauseLabel": "Pauza",
@@ -19,8 +19,9 @@
         "nav": {
             "services": "Xizmatlar",
             "about": "Doktor haqida",
+            "before_after": "Oldin / Keyin",
             "education": "Ta'lim",
-            "reviews": "Sharhlar",
+            "reviews": "Patsient fikrlari",
             "consultation": "Bepul konsultatsiyaga yozilish",
             "languageName": "RU",
             "languageCode": "RU"
@@ -274,6 +275,7 @@
         "nav": {
             "services": "Услуги",
             "about": "О докторе",
+            "before_after": "До / После",
             "education": "Образование",
             "reviews": "Отзывы",
             "consultation": "Бесплатная консультация",
