@@ -345,6 +345,99 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                 </div>
             </section >
 
+
+            {/* About Section */}
+            < section id="about" className="py-20 bg-white" >
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="text-center mb-16">
+                        <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+                            {t.about.title} <span className="bg-gradient-to-r from-[#f3852e] to-[#c96641] bg-clip-text text-transparent">{t.about.titleHighlight}</span>
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t.about.subtitle}</p>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-6 mb-12">
+                        <div className="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden shadow-2xl group bg-gray-200 min-h-[500px]">
+                            {/* Изображение для мобильных (< md) */}
+                            <Image
+                                src="/about-doctor-mobile.jpg"
+                                alt={t.about.imageTitle}
+                                fill
+                                className="object-cover md:hidden"
+                                priority
+                                sizes="100vw"
+                            // quality={85}
+                            />
+
+                            {/* Изображение для десктопа (≥ md) */}
+                            <Image
+                                src="/about-doctor-pc.jpg"
+                                alt={t.about.imageTitle}
+                                fill
+                                className="object-cover hidden md:block"
+                                priority
+                                sizes="(min-width: 768px) 66vw, 100vw"
+                            // quality={90}
+                            />
+
+                            {/* Градиентная подложка */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none"></div>
+
+                            {/* Текст поверх изображения */}
+                            <div className="absolute bottom-8 left-8 right-8 z-10">
+                                <h3 className="text-3xl font-bold text-white mb-3 drop-shadow-lg">
+                                    {t.about.imageTitle}
+                                </h3>
+                                <p className="text-gray-200 text-lg drop-shadow-md">
+                                    {t.about.imageSubtitle}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="bg-gradient-to-br from-[#f3852e]/10 to-[#c96641]/5 p-8 rounded-3xl">
+                            <div className="w-14 h-14 bg-gradient-to-br from-[#f3852e] to-[#c96641] rounded-2xl flex items-center justify-center mb-6">
+                                <Award className="text-white" size={28} />
+                            </div>
+                            <h4 className="text-2xl font-bold text-gray-900 mb-4">{t.about.educationTitle}</h4>
+                            <p className="text-gray-600 leading-relaxed">{t.about.educationText}</p>
+                        </div>
+
+                        <div className="bg-gradient-to-br from-[#f3852e] to-[#c96641] p-8 rounded-3xl text-white">
+                            <div className="text-5xl font-bold mb-2">{t.about.statsNumber}</div>
+                            <div className="text-xl text-white/90 mb-4">{t.about.statsTitle}</div>
+                            <p className="text-white/80">{t.about.statsText}</p>
+                        </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-4 gap-6">
+                        {t.about.advantages.map((advantage, index) => {
+                            const icons = [Award, CheckCircle, Users, Star];
+                            const Icon = icons[index];
+                            return (
+                                <div key={index} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all group">
+                                    <div className="w-12 h-12 bg-gradient-to-br from-[#f3852e] to-[#c96641] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                        <Icon className="text-white" size={24} />
+                                    </div>
+                                    <h4 className="font-bold text-gray-900 mb-2 text-lg">{advantage.title}</h4>
+                                    <p className="text-sm text-gray-600">{advantage.description}</p>
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    <div className="mt-12 bg-gradient-to-r from-gray-50 to-white md:p-12 p-6 rounded-3xl">
+                        <div className="mx-auto">
+                            <h3 className="text-3xl font-bold text-gray-900 mb-6">{t.about.advantagesTitle}</h3>
+                            <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
+                                {t.about.bioText.map((paragraph, idx) => (
+                                    <p key={idx}>{paragraph}</p>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section >
+
             {/* CTA Section */}
             <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
                 <div className="max-w-7xl mx-auto px-4">
@@ -500,98 +593,6 @@ export default function HairTransplantLanding({ translations, initialLang = 'uz'
                                 </div>
                             </div>
                         ))}
-                    </div>
-                </div>
-            </section >
-
-            {/* About Section */}
-            < section id="about" className="py-20 bg-white" >
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-                            {t.about.title} <span className="bg-gradient-to-r from-[#f3852e] to-[#c96641] bg-clip-text text-transparent">{t.about.titleHighlight}</span>
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t.about.subtitle}</p>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-6 mb-12">
-                        <div className="md:col-span-2 md:row-span-2 relative rounded-3xl overflow-hidden shadow-2xl group bg-gray-200 min-h-[500px]">
-                            {/* Изображение для мобильных (< md) */}
-                            <Image
-                                src="/about-doctor-mobile.jpg"
-                                alt={t.about.imageTitle}
-                                fill
-                                className="object-cover md:hidden"
-                                priority
-                                sizes="100vw"
-                            // quality={85}
-                            />
-
-                            {/* Изображение для десктопа (≥ md) */}
-                            <Image
-                                src="/about-doctor-pc.jpg"
-                                alt={t.about.imageTitle}
-                                fill
-                                className="object-cover hidden md:block"
-                                priority
-                                sizes="(min-width: 768px) 66vw, 100vw"
-                            // quality={90}
-                            />
-
-                            {/* Градиентная подложка */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none"></div>
-
-                            {/* Текст поверх изображения */}
-                            <div className="absolute bottom-8 left-8 right-8 z-10">
-                                <h3 className="text-3xl font-bold text-white mb-3 drop-shadow-lg">
-                                    {t.about.imageTitle}
-                                </h3>
-                                <p className="text-gray-200 text-lg drop-shadow-md">
-                                    {t.about.imageSubtitle}
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="bg-gradient-to-br from-[#f3852e]/10 to-[#c96641]/5 p-8 rounded-3xl">
-                            <div className="w-14 h-14 bg-gradient-to-br from-[#f3852e] to-[#c96641] rounded-2xl flex items-center justify-center mb-6">
-                                <Award className="text-white" size={28} />
-                            </div>
-                            <h4 className="text-2xl font-bold text-gray-900 mb-4">{t.about.educationTitle}</h4>
-                            <p className="text-gray-600 leading-relaxed">{t.about.educationText}</p>
-                        </div>
-
-                        <div className="bg-gradient-to-br from-[#f3852e] to-[#c96641] p-8 rounded-3xl text-white">
-                            <div className="text-5xl font-bold mb-2">{t.about.statsNumber}</div>
-                            <div className="text-xl text-white/90 mb-4">{t.about.statsTitle}</div>
-                            <p className="text-white/80">{t.about.statsText}</p>
-                        </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-4 gap-6">
-                        {t.about.advantages.map((advantage, index) => {
-                            const icons = [Award, CheckCircle, Users, Star];
-                            const Icon = icons[index];
-                            return (
-                                <div key={index} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all group">
-                                    <div className="w-12 h-12 bg-gradient-to-br from-[#f3852e] to-[#c96641] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                        <Icon className="text-white" size={24} />
-                                    </div>
-                                    <h4 className="font-bold text-gray-900 mb-2 text-lg">{advantage.title}</h4>
-                                    <p className="text-sm text-gray-600">{advantage.description}</p>
-                                </div>
-                            );
-                        })}
-                    </div>
-
-                    <div className="mt-12 bg-gradient-to-r from-gray-50 to-white md:p-12 p-6 rounded-3xl">
-                        <div className="mx-auto">
-                            <h3 className="text-3xl font-bold text-gray-900 mb-6">{t.about.advantagesTitle}</h3>
-                            <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
-                                {t.about.bioText.map((paragraph, idx) => (
-                                    <p key={idx}>{paragraph}</p>
-                                ))}
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section >

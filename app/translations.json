@@ -246,6 +246,24 @@
                 "Soqol transplantatsiyasi",
                 "Qosh ko'chirish",
                 "PRP-terapiya"
+            ],
+            "city": "Shahar/Viloyat",
+            "cityPlaceholder": "Shaharingizni tanlang",
+            "cityOptions": [
+                "Toshkent shahri",
+                "Andijon viloyati",
+                "Buxoro viloyati",
+                "Farg'ona viloyati",
+                "Jizzax viloyati",
+                "Xorazm viloyati",
+                "Namangan viloyati",
+                "Navoiy viloyati",
+                "Qashqadaryo viloyati",
+                "Qoraqalpog'iston Respublikasi",
+                "Samarqand viloyati",
+                "Sirdaryo viloyati",
+                "Surxondaryo viloyati",
+                "Toshkent viloyati"
             ]
         },
         "footer": {
@@ -502,6 +520,24 @@
                 "Трансплантация бороды",
                 "Пересадка бровей",
                 "PRP-терапия"
+            ],
+            "city": "Город/Область",
+            "cityPlaceholder": "Выберите ваш город",
+            "cityOptions": [
+                "г. Ташкент",
+                "Андижанская область",
+                "Бухарская область",
+                "Ферганская область",
+                "Джизакская область",
+                "Хорезмская область",
+                "Наманганская область",
+                "Навоийская область",
+                "Кашкадарьинская область",
+                "Республика Каракалпакстан",
+                "Самаркандская область",
+                "Сырдарьинская область",
+                "Сурхандарьинская область",
+                "Ташкентская область"
             ]
         },
         "footer": {

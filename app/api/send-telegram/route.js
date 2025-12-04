@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request) {
     try {
         const body = await request.json();
-        const { name, phone, service, comment, url } = body;
+        const { name, phone, service, city, comment, url } = body;
 
         // Validate required fields
         if (!name || !phone) {
@@ -32,7 +32,10 @@ export async function POST(request) {
 Имя: ${name}
 Телефон: ${phone}
 Услуга: ${service}
+
+${city ? `Город/Область: ${city}` : ''}
 ${comment ? `Комментарий: ${comment}` : ''}
+
 Источник: ${url}
 Дата: ${new Date().toLocaleString('ru-RU', { timeZone: 'Asia/Tashkent' })}
     `.trim();
